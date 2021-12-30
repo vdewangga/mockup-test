@@ -14,7 +14,7 @@ router.post('/login', (req, res) => {
         User: null,
       },
     }
-    return response.NewHttpRecordNotFound(res, data, '', 'SUCCESS');
+    return response.NewHttpRecordNotFound(res, data, '', 'Error');
   }
   if (password !== 'pwd') {
     const data = {
@@ -25,7 +25,7 @@ router.post('/login', (req, res) => {
         Password: 'string',
       },
     }
-    return response.NewHttpNOK(res, data, '', 'SUCCESS');
+    return response.NewHttpNOK(res, data, '', 'Error');
   }
 
   if (password === 'pwd' && userName === 'email@test.com') {
@@ -40,5 +40,9 @@ router.post('/login', (req, res) => {
     return response.NewHttpOK(res, data, '', 'SUCCESS');
   }
 });
+
+router.get('/testing', (req, res) => {
+  return response.NewHttpOK(res, "success", "", 'SUCCESS')
+})
 
 module.exports = router;
