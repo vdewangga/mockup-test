@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require('cors');
 const app = express();
@@ -12,7 +13,7 @@ app.use(express.urlencoded({ extended: false}))
 app.use("/api/v1", require('./controller'));
 
 // Running Server
-const server = app.listen(3000, () => {
+const server = app.listen(process.env.PORT || 3000, () => {
     const host = server.address().address
     const port = server.address().port
 
