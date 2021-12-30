@@ -10,7 +10,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false}))
 
 // Routes
-app.use("/api/v1", require('./controller'));
+app.use("/api", require('./controller'));
 
 // Running Server
 const server = app.listen(process.env.PORT || 3000, () => {
