@@ -1,0 +1,82 @@
+const statusCode  = {
+	StatusOK                   : 200, // RFC 7231, 6.3.1
+	StatusCreated              : 201, // RFC 7231, 6.3.2
+	StatusAccepted             : 202, // RFC 7231, 6.3.3
+
+	StatusBadRequest                   : 400, // RFC 7231, 6.5.1
+	StatusUnauthorized                 : 401, // RFC 7235, 3.1
+	StatusForbidden                    : 403, // RFC 7231, 6.5.3
+	StatusNotFound                     : 404, // RFC 7231, 6.5.4
+	StatusMethodNotAllowed             : 405, // RFC 7231, 6.5.5
+	StatusConflict                     : 409, // RFC 7231, 6.5.8
+	StatusGone                         : 410, // RFC 7231, 6.5.9
+	StatusLengthRequired               : 411, // RFC 7231, 6.5.10
+
+	StatusInternalServerError           : 500, // RFC 7231, 6.6.1
+	StatusNotImplemented                : 501, // RFC 7231, 6.6.2
+	StatusBadGateway                    : 502, // RFC 7231, 6.6.3
+	StatusServiceUnavailable            : 503, // RFC 7231, 6.6.4
+}
+
+exports.NewHttpOK = (res,body = [],message,flag = "") => {
+  return res.status(statusCode.StatusOK).json({
+    code: statusCode.StatusOK,
+    body,
+    message,
+    flag
+  });
+}
+
+exports.NewHttpNOK = (res,body = [],message,flag = "") => {
+  return res.status(statusCode.StatusBadRequest).json({
+    code: statusCode.StatusBadRequest,
+    body,
+    message,
+    flag
+  });
+}
+
+exports.NewHttpServerError = (res,body = [],message,flag = "") => {
+  return res.status(statusCode.StatusInternalServerError).json({
+    code: statusCode.StatusInternalServerError,
+    body,
+    message,
+    flag
+  });
+}
+
+exports.NewHttpDuplicate = (res,body = [], message, flag = "") => {
+  return res.status(statusCode.StatusConflict).json({
+    code: statusCode.StatusConflict,
+    body,
+    message,
+    flag
+  });
+}
+
+exports.NewHttpRecordNotFound = (res,body = [],message, flag = "") => {
+  return res.status(statusCode.StatusNotFound).json({
+    code: statusCode.StatusNotFound,
+    body,
+    message,
+    flag
+  });
+}
+
+exports.NewHttpUnauthorized = (res,body = [],message, flag = "") => {
+  return res.status(statusCode.StatusUnauthorized).json({
+    code: statusCode.StatusUnauthorized,
+    body,
+    message,
+    flag
+  });
+}
+
+exports.NewHttpMethodNotAllowd = (res,body = [],message, flag = "") => {
+  return res.status(statusCode.StatusMethodNotAllowed).json({
+    code: statusCode.StatusMethodNotAllowed,
+    body,
+    message,
+    flag
+  });
+}
