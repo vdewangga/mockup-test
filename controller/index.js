@@ -39,6 +39,18 @@ router.post('/login', (req, res) => {
     }
     return response.NewHttpOK(res, data, '', 'SUCCESS');
   }
+
+  if (password === 'test1' && userName === 'email@test.com') {
+    const data = {
+      userName: 'email',
+      exp: 3232,
+      token:
+        'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyTmFtZSI6ImVtYWlsIiwibmFtZSI6Ill1ZGlzdGEiLCJleHAiOjE2NDA3ODE5OTZ9.nEhLOP1ahhpOLs7yQRxYXeIYJB4-KIpcYU0nlNrDnOA',
+      refreshToken:
+        'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyTmFtZSI6ImVtYWlsIiwibmFtZSI6Ill1ZGlzdGEiLCJleHAiOjE2NDA3ODE5OTZ9.nEhLOP1ahhpOLs7yQRxYXeIYJB4-KIpcYU0nlNrDnOA',
+    }
+    return response.NewHttpServerError(res, data, '', 'Error');
+  }
 });
 
 router.get('/testing', (req, res) => {
