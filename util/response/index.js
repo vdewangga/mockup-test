@@ -22,7 +22,7 @@ exports.NewHttpOK = (res,body = [],message,flag = "") => {
   return res.status(statusCode.StatusOK).json({
     ...body,
     code: statusCode.StatusOK,
-    message,
+    // message,
     flag
   });
 }
@@ -31,7 +31,7 @@ exports.NewHttpNOK = (res,body = [],message,flag = "") => {
   return res.status(statusCode.StatusBadRequest).json({
     ...body,
     code: statusCode.StatusBadRequest,
-    message,
+    // message,
     flag
   });
 }
@@ -40,7 +40,7 @@ exports.NewHttpServerError = (res,body = [],message,flag = "") => {
   return res.status(statusCode.StatusInternalServerError).json({
     ...body,
     code: statusCode.StatusInternalServerError,
-    message,
+    // message,
     flag
   });
 }
@@ -58,7 +58,7 @@ exports.NewHttpRecordNotFound = (res,body = [],message, flag = "") => {
   return res.status(statusCode.StatusNotFound).json({
     ...body,
     code: statusCode.StatusNotFound,
-    message,
+    // message,
     flag
   });
 }
@@ -67,7 +67,7 @@ exports.NewHttpUnauthorized = (res,body = [],message, flag = "") => {
   return res.status(statusCode.StatusUnauthorized).json({
     ...body,
     code: statusCode.StatusUnauthorized,
-    message,
+    // message,
     flag
   });
 }
@@ -76,7 +76,7 @@ exports.NewHttpMethodNotAllowd = (res,body = [],message, flag = "") => {
   return res.status(statusCode.StatusMethodNotAllowed).json({
     ...body,
     code: statusCode.StatusMethodNotAllowed,
-    message,
+    // message,
     flag
   });
 }
