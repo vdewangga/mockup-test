@@ -20,8 +20,8 @@ const statusCode  = {
 
 exports.NewHttpOK = (res,body = [],message,flag = "") => {
   return res.status(statusCode.StatusOK).json({
+    ...body,
     code: statusCode.StatusOK,
-    body,
     message,
     flag
   });
@@ -29,8 +29,8 @@ exports.NewHttpOK = (res,body = [],message,flag = "") => {
 
 exports.NewHttpNOK = (res,body = [],message,flag = "") => {
   return res.status(statusCode.StatusBadRequest).json({
+    ...body,
     code: statusCode.StatusBadRequest,
-    body,
     message,
     flag
   });
@@ -38,8 +38,8 @@ exports.NewHttpNOK = (res,body = [],message,flag = "") => {
 
 exports.NewHttpServerError = (res,body = [],message,flag = "") => {
   return res.status(statusCode.StatusInternalServerError).json({
+    ...body,
     code: statusCode.StatusInternalServerError,
-    body,
     message,
     flag
   });
@@ -47,8 +47,8 @@ exports.NewHttpServerError = (res,body = [],message,flag = "") => {
 
 exports.NewHttpDuplicate = (res,body = [], message, flag = "") => {
   return res.status(statusCode.StatusConflict).json({
+    ...body,
     code: statusCode.StatusConflict,
-    body,
     message,
     flag
   });
@@ -56,8 +56,8 @@ exports.NewHttpDuplicate = (res,body = [], message, flag = "") => {
 
 exports.NewHttpRecordNotFound = (res,body = [],message, flag = "") => {
   return res.status(statusCode.StatusNotFound).json({
+    ...body,
     code: statusCode.StatusNotFound,
-    body,
     message,
     flag
   });
@@ -65,8 +65,8 @@ exports.NewHttpRecordNotFound = (res,body = [],message, flag = "") => {
 
 exports.NewHttpUnauthorized = (res,body = [],message, flag = "") => {
   return res.status(statusCode.StatusUnauthorized).json({
+    ...body,
     code: statusCode.StatusUnauthorized,
-    body,
     message,
     flag
   });
@@ -74,8 +74,8 @@ exports.NewHttpUnauthorized = (res,body = [],message, flag = "") => {
 
 exports.NewHttpMethodNotAllowd = (res,body = [],message, flag = "") => {
   return res.status(statusCode.StatusMethodNotAllowed).json({
+    ...body,
     code: statusCode.StatusMethodNotAllowed,
-    body,
     message,
     flag
   });
