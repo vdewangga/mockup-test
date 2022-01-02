@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: false}))
 app.use("/api", require('./controller'));
 
 // Running Server
-const server = app.listen(process.env.PORT || 3000, () => {
+const server = app.listen(process.env.PORT || 4000, () => {
     const host = server.address().address
     const port = server.address().port
 

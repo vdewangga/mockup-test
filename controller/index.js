@@ -60,10 +60,69 @@ router.post("/UserAuth/login", (req, res) => {
   }
 });
 
+router.post("/UserAuth/emailrequest", (req, res) => {
+  const {email} = req.body;
+
+  if(email == '1@mail.com') {
+    const data = {
+      message: "Email Not Found",
+      errorCode: "USERRESETPASSWORD/NOT-FOUND",
+      parameter: {
+        User: null
+      }
+    }
+    return response.NewHttpRecordNotFound(res, data, "", "Error");
+  }
+
+  if(email == '2@mail.com') {
+    const data = {
+      message: "INTERNAL SERVER ERROR",
+      errorCode: "INTERNAL SERVER ERROR",
+      parameter: null,
+    };
+    return response.NewHttpServerError(res, data, "", "Error");
+  }
+
+  if(email == '3@mail.com') {
+    const data = {
+      type: "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+      title: "One or more validation errors occurred.",
+      status: 400,
+      traceId: "00-43ca9d87c0f5f9733340d4998933790f-8db56e8a3dbceccb-00",
+      errors: {
+        Email: [
+          "The Email field is required."
+        ]
+      }
+    }
+    return response.NewHttpNOK(res, data, "", "Error");
+  }
+
+  if(email == '4@mail.com') {
+    const data = {
+      type: "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+      title: "One or more validation errors occurred.",
+      status: 400,
+      traceId: "00-43ca9d87c0f5f9733340d4998933790f-8db56e8a3dbceccb-00",
+      errors: {
+        Email: [
+          "The field Email must be a string or array type with a maximum length of '50'."
+        ]
+      }
+    }
+    return response.NewHttpNOK(res, data, "", "Error");
+  }
+
+  if(email == '5@mail.com') {
+    const data = {};
+    return response.NewHttpOK(res, data, "", "SUCCESS");
+  }
+});
+
 router.post("/userAuth/resetpassword", (req, res) => {
   const { token, newPassword, verifyNewPassword } = req.body;
-
-  if (newPassword === '1') {
+  console.log(newPassword);
+  if (newPassword === 'testinG123*') {
     const data = {
       message: "Token Not Found",
       errorCode: "USER-RESET-PASSWORD/NOT-FOUND",
