@@ -122,7 +122,7 @@ router.post("/UserAuth/emailrequest", (req, res) => {
 router.post("/userAuth/resetpassword", (req, res) => {
   const { token, newPassword, verifyNewPassword } = req.body;
   console.log(newPassword);
-  if (newPassword === 'testinG123*') {
+  if (newPassword === '1testinG123*') {
     const data = {
       message: "Token Not Found",
       errorCode: "USER-RESET-PASSWORD/NOT-FOUND",
@@ -133,7 +133,7 @@ router.post("/userAuth/resetpassword", (req, res) => {
     return response.NewHttpRecordNotFound(res, data, "", "Error");
   }
 
-  if (newPassword === '2') {
+  if (newPassword === '2testinG123*') {
     const data = {
       message: "INTERNAL SERVER ERROR",
       errorCode: "INTERNAL SERVER ERROR",
@@ -142,7 +142,7 @@ router.post("/userAuth/resetpassword", (req, res) => {
     return response.NewHttpServerError(res, data, "", "Error");
   }
 
-  if (newPassword === '3') {
+  if (newPassword === '3testinG123*') {
     const data = {
       type: "https://tools.ietf.org/html/rfc7231#section-6.5.1",
       title: "One or more validation errors occurred.",
@@ -162,7 +162,7 @@ router.post("/userAuth/resetpassword", (req, res) => {
     return response.NewHttpNOK(res, data, "", "Error");
   }
 
-  if (newPassword === '4') {
+  if (newPassword === '4testinG123*') {
     const data = {
       message: ["Passwords do not match"],
       errorCode: "VALIDATION-ERROR",
@@ -173,7 +173,7 @@ router.post("/userAuth/resetpassword", (req, res) => {
     return response.NewHttpNOK(res, data, "", "Error");
   }
 
-  if (newPassword === '5') {
+  if (newPassword === '5testinG123*') {
     const data = {};
     return response.NewHttpOK(res, data, "", "SUCCESS");
   }
