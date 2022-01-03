@@ -60,7 +60,7 @@ router.post("/UserAuth/login", (req, res) => {
   }
 });
 
-router.post("/UserAuth/emailrequest", (req, res) => {
+router.put("/UserAuth/emailrequest", (req, res) => {
   const {email} = req.body;
 
   if(email == '1@mail.com') {
@@ -119,7 +119,7 @@ router.post("/UserAuth/emailrequest", (req, res) => {
   }
 });
 
-router.post("/userAuth/resetpassword", (req, res) => {
+router.put("/userAuth/resetpassword", (req, res) => {
   const { token, newPassword, verifyNewPassword } = req.body;
   console.log(newPassword);
   if (newPassword === '1testinG123*') {
