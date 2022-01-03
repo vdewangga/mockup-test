@@ -29,21 +29,22 @@ router.post("/UserAuth/login", (req, res) => {
 
   if (password !== "pwd" || userName !== "email@test.com") {
     const data = {
-      type: "https://tools.ietf.org/html/rfc7231#section-6.5.1",
-      title: "One or more validation errors occurred.",
-      status: 400,
-      traceId: "00-43ca9d87c0f5f9733340d4998933790f-8db56e8a3dbceccb-00",
-      errors: {
-        UserName: [
-          "The UserName field is required.",
-          "The field UserName must be a string or array type with a minimum length of '6'.",
-        ],
+      message: [
+        "The UserName field is required.",
+        "The field UserName must be a string or array type with a minimum length of '6'."
+      ],
+      errorCode: "VALIDATION-ERROR",
+      parameter: {
         Password: [
           "The Password field is required.",
-          "The field Password must be a string or array type with a minimum length of '10'.",
+          "The field Password must be a string or array type with a minimum length of '10'."
         ],
-      },
-    };
+        UserName: [
+          "The UserName field is required.",
+          "The field UserName must be a string or array type with a minimum length of '6'."
+        ]
+      }
+    }
     return response.NewHttpNOK(res, data, "", "Error");
   }
 
@@ -85,11 +86,9 @@ router.put("/UserAuth/emailrequest", (req, res) => {
 
   if(email == '3@mail.com') {
     const data = {
-      type: "https://tools.ietf.org/html/rfc7231#section-6.5.1",
-      title: "One or more validation errors occurred.",
-      status: 400,
-      traceId: "00-43ca9d87c0f5f9733340d4998933790f-8db56e8a3dbceccb-00",
-      errors: {
+      message: [ "The Email field is required."],
+      errorCode: "VALIDATION-ERROR",
+      parameter: {
         Email: [
           "The Email field is required."
         ]
@@ -100,11 +99,11 @@ router.put("/UserAuth/emailrequest", (req, res) => {
 
   if(email == '4@mail.com') {
     const data = {
-      type: "https://tools.ietf.org/html/rfc7231#section-6.5.1",
-      title: "One or more validation errors occurred.",
-      status: 400,
-      traceId: "00-43ca9d87c0f5f9733340d4998933790f-8db56e8a3dbceccb-00",
-      errors: {
+      message: [
+        "The field Email must be a string or array type with a maximum length of '50'."
+      ],
+      errorCode: "VALIDATION-ERROR",
+      parameter: {
         Email: [
           "The field Email must be a string or array type with a maximum length of '50'."
         ]
@@ -144,21 +143,25 @@ router.put("/userAuth/resetpassword", (req, res) => {
 
   if (newPassword === '3testinG123*') {
     const data = {
-      type: "https://tools.ietf.org/html/rfc7231#section-6.5.1",
-      title: "One or more validation errors occurred.",
-      status: 400,
-      traceId: "00-43ca9d87c0f5f9733340d4998933790f-8db56e8a3dbceccb-00",
-      errors: {
-        UserName: [
-          "The UserName field is required.",
-          "The field UserName must be a string or array type with a minimum length of '6'.",
+      message: [
+        "The VerifyNewPassword field is required.",
+        "The field VerifyNewPassword must be a string or array type with a minimum length of '10'."
+      ],
+      errorCode: "VALIDATION-ERROR",
+      parameter: {
+        Token: [
+          "The Token field is required."
         ],
-        Password: [
-          "The Password field is required.",
-          "The field Password must be a string or array type with a minimum length of '10'.",
+        NewPassword: [
+          "The NewPassword field is required.",
+          "The field NewPassword must be a string or array type with a minimum length of '10'."
         ],
-      },
-    };
+        VerifyNewPassword: [
+          "The VerifyNewPassword field is required.",
+          "The field VerifyNewPassword must be a string or array type with a minimum length of '10'."
+        ]
+      }
+    }
     return response.NewHttpNOK(res, data, "", "Error");
   }
 
