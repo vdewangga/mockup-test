@@ -182,6 +182,87 @@ router.put("/userAuth/resetpassword", (req, res) => {
   }
 });
 
+router.get("/payGroup/tax-rule", (req, res) => {
+  const { page } = req.query;
+  const data = {data:[
+    {
+      paygroupCode: 'PAY-202200000001',
+      payCycleName: 'Monthly',
+      isActiveStatus: 'Active',
+      description: 'Main Cycle pay group for 2022',
+      id: 1,
+    },
+    {
+      paygroupCode: 'PAY-202200000001',
+      payCycleName: 'Monthly',
+      isActiveStatus: 'Active',
+      description: 'Main Cycle pay group for 2022',
+      id: 2,
+    },
+    {
+      paygroupCode: 'PAY-202200000001',
+      payCycleName: 'Monthly',
+      isActiveStatus: 'Active',
+      description: 'Main Cycle pay group for 2022',
+      id: 3,
+    },
+    {
+      paygroupCode: 'PAY-202200000001',
+      payCycleName: 'Monthly',
+      isActiveStatus: 'Active',
+      description: 'Main Cycle pay group for 2022',
+      id: 4,
+    },
+    {
+      paygroupCode: 'PAY-202200000001',
+      payCycleName: 'Monthly',
+      isActiveStatus: 'Active',
+      description: 'Main Cycle pay group for 2022',
+      id: 5,
+    },
+    {
+      paygroupCode: 'PAY-202200000001',
+      payCycleName: 'Monthly',
+      isActiveStatus: 'Active',
+      description: 'Main Cycle pay group for 2022',
+      id: 6,
+    },
+    {
+      paygroupCode: 'PAY-202200000001',
+      payCycleName: 'Monthly',
+      isActiveStatus: 'Active',
+      description: 'Main Cycle pay group for 2022',
+      id: 7,
+    },
+    {
+      paygroupCode: 'PAY-202200000001',
+      payCycleName: 'Monthly',
+      isActiveStatus: 'Active',
+      description: 'Main Cycle pay group for 2022',
+      id: 8,
+    },
+    {
+      paygroupCode: 'PAY-202200000001',
+      payCycleName: 'Monthly',
+      isActiveStatus: 'Active',
+      description: 'Main Cycle pay group for 2022',
+      id: 9,
+    },
+    {
+      paygroupCode: 'PAY-202200000001',
+      payCycleName: 'Monthly',
+      isActiveStatus: 'Active',
+      description: 'Main Cycle pay group for 2022',
+      id: 10,
+    },
+  ],
+  page : page,
+  limit : 10,
+  total : 56
+  };
+  return response.NewHttpOK(res, data, "", "SUCCESS");
+});
+
 router.get("/testing", (req, res) => {
   return response.NewHttpOK(res, "success", "", "SUCCESS");
 });
