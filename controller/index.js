@@ -29,18 +29,19 @@ router.post('/UserAuth/login', (req, res) => {
 
   if (password !== 'pwd' || userName !== 'email@test.com') {
     const data = {
-      type: 'https://tools.ietf.org/html/rfc7231#section-6.5.1',
-      title: 'One or more validation errors occurred.',
-      status: 400,
-      traceId: '00-43ca9d87c0f5f9733340d4998933790f-8db56e8a3dbceccb-00',
-      errors: {
-        UserName: [
-          'The UserName field is required.',
-          "The field UserName must be a string or array type with a minimum length of '6'.",
-        ],
+      message: [
+        'The UserName field is required.',
+        "The field UserName must be a string or array type with a minimum length of '6'.",
+      ],
+      errorCode: 'VALIDATION-ERROR',
+      parameter: {
         Password: [
           'The Password field is required.',
           "The field Password must be a string or array type with a minimum length of '10'.",
+        ],
+        UserName: [
+          'The UserName field is required.',
+          "The field UserName must be a string or array type with a minimum length of '6'.",
         ],
       },
     };
@@ -85,12 +86,12 @@ router.put('/UserAuth/emailrequest', (req, res) => {
 
   if (email == '3@mail.com') {
     const data = {
-      type: 'https://tools.ietf.org/html/rfc7231#section-6.5.1',
-      title: 'One or more validation errors occurred.',
-      status: 400,
-      traceId: '00-43ca9d87c0f5f9733340d4998933790f-8db56e8a3dbceccb-00',
-      errors: {
-        Email: ['The Email field is required.'],
+      message: ['The Email field is required.'],
+      errorCode: 'VALIDATION-ERROR',
+      parameter: {
+        Email: [
+          "The field Email must be a string or array type with a maximum length of '50'.",
+        ],
       },
     };
     return response.NewHttpNOK(res, data, '', 'Error');
@@ -98,11 +99,11 @@ router.put('/UserAuth/emailrequest', (req, res) => {
 
   if (email == '4@mail.com') {
     const data = {
-      type: 'https://tools.ietf.org/html/rfc7231#section-6.5.1',
-      title: 'One or more validation errors occurred.',
-      status: 400,
-      traceId: '00-43ca9d87c0f5f9733340d4998933790f-8db56e8a3dbceccb-00',
-      errors: {
+      message: [
+        "The field Email must be a string or array type with a maximum length of '50'.",
+      ],
+      errorCode: 'VALIDATION-ERROR',
+      parameter: {
         Email: [
           "The field Email must be a string or array type with a maximum length of '50'.",
         ],
@@ -142,18 +143,20 @@ router.put('/userAuth/resetpassword', (req, res) => {
 
   if (newPassword === '3testinG123*') {
     const data = {
-      type: 'https://tools.ietf.org/html/rfc7231#section-6.5.1',
-      title: 'One or more validation errors occurred.',
-      status: 400,
-      traceId: '00-43ca9d87c0f5f9733340d4998933790f-8db56e8a3dbceccb-00',
-      errors: {
-        UserName: [
-          'The UserName field is required.',
-          "The field UserName must be a string or array type with a minimum length of '6'.",
+      message: [
+        'The VerifyNewPassword field is required.',
+        "The field VerifyNewPassword must be a string or array type with a minimum length of '10'.",
+      ],
+      errorCode: 'VALIDATION-ERROR',
+      parameter: {
+        Token: ['The Token field is required.'],
+        NewPassword: [
+          'The NewPassword field is required.',
+          "The field NewPassword must be a string or array type with a minimum length of '10'.",
         ],
-        Password: [
-          'The Password field is required.',
-          "The field Password must be a string or array type with a minimum length of '10'.",
+        VerifyNewPassword: [
+          'The VerifyNewPassword field is required.',
+          "The field VerifyNewPassword must be a string or array type with a minimum length of '10'.",
         ],
       },
     };
@@ -175,6 +178,262 @@ router.put('/userAuth/resetpassword', (req, res) => {
     const data = {};
     return response.NewHttpOK(res, data, '', 'SUCCESS');
   }
+});
+
+router.get('/payGroup/tax-rule', (req, res) => {
+  const { page } = req.query;
+  const data = {
+    data: [
+      {
+        paygroupCode: `PAY-202200000001 page ${page}`,
+        payCycleName: 'Monthly',
+        isActiveStatus: 'Active',
+        description: 'Main Cycle pay group for 2022',
+        id: 1,
+      },
+      {
+        paygroupCode: 'PAY-202200000001',
+        payCycleName: 'Monthly',
+        isActiveStatus: 'Active',
+        description: 'Main Cycle pay group for 2022',
+        id: 2,
+      },
+      {
+        paygroupCode: 'PAY-202200000001',
+        payCycleName: 'Monthly',
+        isActiveStatus: 'Active',
+        description: 'Main Cycle pay group for 2022',
+        id: 3,
+      },
+      {
+        paygroupCode: 'PAY-202200000001',
+        payCycleName: 'Monthly',
+        isActiveStatus: 'Active',
+        description: 'Main Cycle pay group for 2022',
+        id: 4,
+      },
+      {
+        paygroupCode: 'PAY-202200000001',
+        payCycleName: 'Monthly',
+        isActiveStatus: 'Active',
+        description: 'Main Cycle pay group for 2022',
+        id: 5,
+      },
+      {
+        paygroupCode: 'PAY-202200000001',
+        payCycleName: 'Monthly',
+        isActiveStatus: 'Active',
+        description: 'Main Cycle pay group for 2022',
+        id: 6,
+      },
+      {
+        paygroupCode: 'PAY-202200000001',
+        payCycleName: 'Monthly',
+        isActiveStatus: 'Active',
+        description: 'Main Cycle pay group for 2022',
+        id: 7,
+      },
+      {
+        paygroupCode: 'PAY-202200000001',
+        payCycleName: 'Monthly',
+        isActiveStatus: 'Active',
+        description: 'Main Cycle pay group for 2022',
+        id: 8,
+      },
+      {
+        paygroupCode: 'PAY-202200000001',
+        payCycleName: 'Monthly',
+        isActiveStatus: 'Active',
+        description: 'Main Cycle pay group for 2022',
+        id: 9,
+      },
+      {
+        paygroupCode: 'PAY-202200000001',
+        payCycleName: 'Monthly',
+        isActiveStatus: 'Active',
+        description: 'Main Cycle pay group for 2022',
+        id: 10,
+      },
+    ],
+    page: parseInt(page),
+    limit: 10,
+    total: 56,
+  };
+  return response.NewHttpOK(res, data, '', 'SUCCESS');
+});
+
+router.get('/employment/employees', (req, res) => {
+  const { page } = req.query;
+  const data = {
+    data: [
+      {
+        employeeNo: `EMP45678901234 page-${page}`,
+        name: 'John Doe',
+        jobPostion: 'Junior BA',
+        isActiveStatus: true,
+        id: 1,
+      },
+      {
+        employeeNo: 'EMP45678901234',
+        name: 'John Doe',
+        jobPostion: 'Junior BA',
+        isActiveStatus: true,
+        id: 2,
+      },
+      {
+        employeeNo: 'EMP45678901234',
+        name: 'John Doe',
+        jobPostion: 'Junior BA',
+        isActiveStatus: true,
+        id: 3,
+      },
+      {
+        employeeNo: 'EMP45678901234',
+        name: 'John Doe',
+        jobPostion: 'Junior BA',
+        isActiveStatus: true,
+        id: 4,
+      },
+      {
+        employeeNo: 'EMP45678901234',
+        name: 'John Doe',
+        jobPostion: 'Junior BA',
+        isActiveStatus: true,
+        id: 5,
+      },
+      {
+        employeeNo: 'EMP45678901234',
+        name: 'John Doe',
+        jobPostion: 'Junior BA',
+        isActiveStatus: true,
+        id: 6,
+      },
+      {
+        employeeNo: 'EMP45678901234',
+        name: 'John Doe',
+        jobPostion: 'Junior BA',
+        isActiveStatus: true,
+        id: 7,
+      },
+      {
+        employeeNo: 'EMP45678901234',
+        name: 'John Doe',
+        jobPostion: 'Junior BA',
+        isActiveStatus: true,
+        id: 8,
+      },
+      {
+        employeeNo: 'EMP45678901234',
+        name: 'John Doe',
+        jobPostion: 'Junior BA',
+        isActiveStatus: true,
+        id: 9,
+      },
+      {
+        employeeNo: 'EMP45678901234',
+        name: 'John Doe',
+        jobPostion: 'Junior BA',
+        isActiveStatus: true,
+        id: 10,
+      },
+    ],
+    page: parseInt(page),
+    limit: 10,
+    total: 56,
+  };
+  return response.NewHttpOK(res, data, '', 'SUCCESS');
+});
+
+router.get('/payroll-run/tax-rule', (req, res) => {
+  const { page } = req.query;
+  const data = {
+    data: [
+      {
+        unit: 'Company A',
+        payGroupCode: 'PAY-2022000001',
+        payCycle: 'Monthly',
+        status: false,
+        description: 'Main Cycle pay group for 2021',
+        id: 1,
+      },
+      {
+        unit: 'Company A',
+        payGroupCode: 'PAY-2022000001',
+        payCycle: 'Monthly',
+        status: false,
+        description: 'Main Cycle pay group for 2021',
+        id: 2,
+      },
+      {
+        unit: 'Company A',
+        payGroupCode: 'PAY-2022000001',
+        payCycle: 'Monthly',
+        status: false,
+        description: 'Main Cycle pay group for 2021',
+        id: 3,
+      },
+      {
+        unit: 'Company A',
+        payGroupCode: 'PAY-2022000001',
+        payCycle: 'Monthly',
+        status: false,
+        description: 'Main Cycle pay group for 2021',
+        id: 4,
+      },
+      {
+        unit: 'Company A',
+        payGroupCode: 'PAY-2022000001',
+        payCycle: 'Monthly',
+        status: false,
+        description: 'Main Cycle pay group for 2021',
+        id: 5,
+      },
+      {
+        unit: 'Company A',
+        payGroupCode: 'PAY-2022000001',
+        payCycle: 'Monthly',
+        status: false,
+        description: 'Main Cycle pay group for 2021',
+        id: 6,
+      },
+      {
+        unit: 'Company A',
+        payGroupCode: 'PAY-2022000001',
+        payCycle: 'Monthly',
+        status: false,
+        description: 'Main Cycle pay group for 2021',
+        id: 7,
+      },
+      {
+        unit: 'Company A',
+        payGroupCode: 'PAY-2022000001',
+        payCycle: 'Monthly',
+        status: false,
+        description: 'Main Cycle pay group for 2021',
+        id: 8,
+      },
+      {
+        unit: 'Company A',
+        payGroupCode: 'PAY-2022000001',
+        payCycle: 'Monthly',
+        status: false,
+        description: 'Main Cycle pay group for 2021',
+        id: 9,
+      },
+      {
+        unit: 'Company A',
+        payGroupCode: 'PAY-2022000001',
+        payCycle: 'Monthly',
+        status: false,
+        description: 'Main Cycle pay group for 2021',
+        id: 10,
+      },
+    ],
+    page: parseInt(page),
+    limit: 10,
+    total: 56,
+  };
+  return response.NewHttpOK(res, data, '', 'SUCCESS');
 });
 
 router.get('/testing', (req, res) => {
