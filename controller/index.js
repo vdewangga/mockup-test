@@ -186,7 +186,7 @@ router.get("/payGroup/tax-rule", (req, res) => {
   const { page } = req.query;
   const data = {data:[
     {
-      paygroupCode: 'PAY-202200000001',
+      paygroupCode: `PAY-202200000001 page ${page}`,
       payCycleName: 'Monthly',
       isActiveStatus: 'Active',
       description: 'Main Cycle pay group for 2022',
@@ -256,7 +256,88 @@ router.get("/payGroup/tax-rule", (req, res) => {
       id: 10,
     },
   ],
-  page : page,
+  page : parseInt(page),
+  limit : 10,
+  total : 56
+  };
+  return response.NewHttpOK(res, data, "", "SUCCESS");
+});
+
+router.get("/employment//employees", (req, res) => {
+  const { page } = req.query;
+  const data = {data:[
+    {
+      employeeNo: `EMP45678901234 page-${page}`,
+      name: 'John Doe',
+      jobPostion: 'Junior BA',
+      isActiveStatus: 'Active',
+      id: 1,
+    },
+    {
+      employeeNo: 'EMP45678901234',
+      name: 'John Doe',
+      jobPostion: 'Junior BA',
+      isActiveStatus: 'Active',
+      id: 2,
+    },
+    {
+      employeeNo: 'EMP45678901234',
+      name: 'John Doe',
+      jobPostion: 'Junior BA',
+      isActiveStatus: 'Active',
+      id: 3,
+    },
+    {
+      employeeNo: 'EMP45678901234',
+      name: 'John Doe',
+      jobPostion: 'Junior BA',
+      isActiveStatus: 'Active',
+      id: 4,
+    },
+    {
+      employeeNo: 'EMP45678901234',
+      name: 'John Doe',
+      jobPostion: 'Junior BA',
+      isActiveStatus: 'Active',
+      id: 5,
+    },
+    {
+      employeeNo: 'EMP45678901234',
+      name: 'John Doe',
+      jobPostion: 'Junior BA',
+      isActiveStatus: 'Active',
+      id: 6,
+    },
+    {
+      employeeNo: 'EMP45678901234',
+      name: 'John Doe',
+      jobPostion: 'Junior BA',
+      isActiveStatus: 'Active',
+      id: 7,
+    },
+    {
+      employeeNo: 'EMP45678901234',
+      name: 'John Doe',
+      jobPostion: 'Junior BA',
+      isActiveStatus: 'Active',
+      id: 8,
+    },
+    {
+      employeeNo: 'EMP45678901234',
+      name: 'John Doe',
+      jobPostion: 'Junior BA',
+      isActiveStatus: 'Active',
+      id: 9,
+    },
+    {
+      employeeNo: 'EMP45678901234',
+      name: 'John Doe',
+      jobPostion: 'Junior BA',
+      isActiveStatus: 'Active',
+      id: 10,
+    },
+  ],
+  page : parseInt(page),
   limit : 10,
   total : 56
   };
