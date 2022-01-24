@@ -538,4 +538,24 @@ router.post('/payroll-run', (req, res) => {
   );
 });
 
+router.post('/pay-group', (req, res) => {
+  const { paygroupCode } = req.body;
+  if (paygroupCode == 'inikodebakal') {
+    const data = {
+      message: 'Pay period not found',
+      errorCode: 'USERRESETPASSWORD/NOT-FOUND',
+      parameter: {
+        User: null,
+      },
+    };
+    return response.NewHttpRecordNotFound(res, data, '', 'Error');
+  }
+  return response.NewHttpOK(
+    res,
+    'success',
+    '',
+    'SUCCESS'
+  );
+});
+
 module.exports = router;
