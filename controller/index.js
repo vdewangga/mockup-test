@@ -263,7 +263,7 @@ router.get("/payGroup/tax-rule", (req, res) => {
   return response.NewHttpOK(res, data, "", "SUCCESS");
 });
 
-router.get("/employment//employees", (req, res) => {
+router.get("/employment/employees", (req, res) => {
   const { page } = req.query;
   const data = {data:[
     {
@@ -334,6 +334,98 @@ router.get("/employment//employees", (req, res) => {
       name: 'John Doe',
       jobPostion: 'Junior BA',
       isActiveStatus: 'Active',
+      id: 10,
+    },
+  ],
+  page : parseInt(page),
+  limit : 10,
+  total : 56
+  };
+  return response.NewHttpOK(res, data, "", "SUCCESS");
+});
+
+router.get("/payroll-run/tax-rule", (req, res) => {
+  const { page } = req.query;
+  const data = {
+    data:[
+    {
+      unit: 'Company A',
+      payGroupCode: 'PAY-2022000001',
+      payCycle: 'Monthly',
+      status: false,
+      description: 'Main Cycle pay group for 2021',
+      id: 1,
+    },
+    {
+      unit: 'Company A',
+      payGroupCode: 'PAY-2022000001',
+      payCycle: 'Monthly',
+      status: false,
+      description: 'Main Cycle pay group for 2021',
+      id: 2,
+    },
+    {
+      unit: 'Company A',
+      payGroupCode: 'PAY-2022000001',
+      payCycle: 'Monthly',
+      status: false,
+      description: 'Main Cycle pay group for 2021',
+      id: 3,
+    },
+    {
+      unit: 'Company A',
+      payGroupCode: 'PAY-2022000001',
+      payCycle: 'Monthly',
+      status: false,
+      description: 'Main Cycle pay group for 2021',
+      id: 4,
+    },
+    {
+      unit: 'Company A',
+      payGroupCode: 'PAY-2022000001',
+      payCycle: 'Monthly',
+      status: false,
+      description: 'Main Cycle pay group for 2021',
+      id: 5,
+    },
+    {
+      unit: 'Company A',
+      payGroupCode: 'PAY-2022000001',
+      payCycle: 'Monthly',
+      status: false,
+      description: 'Main Cycle pay group for 2021',
+      id: 6,
+    },
+    {
+      unit: 'Company A',
+      payGroupCode: 'PAY-2022000001',
+      payCycle: 'Monthly',
+      status: false,
+      description: 'Main Cycle pay group for 2021',
+      id: 7,
+    },
+    {
+      unit: 'Company A',
+      payGroupCode: 'PAY-2022000001',
+      payCycle: 'Monthly',
+      status: false,
+      description: 'Main Cycle pay group for 2021',
+      id: 8,
+    },
+    {
+      unit: 'Company A',
+      payGroupCode: 'PAY-2022000001',
+      payCycle: 'Monthly',
+      status: false,
+      description: 'Main Cycle pay group for 2021',
+      id: 9,
+    },
+    {
+      unit: 'Company A',
+      payGroupCode: 'PAY-2022000001',
+      payCycle: 'Monthly',
+      status: false,
+      description: 'Main Cycle pay group for 2021',
       id: 10,
     },
   ],
