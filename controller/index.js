@@ -679,4 +679,66 @@ router.post('/pay-group', (req, res) => {
   );
 });
 
+router.get('/employment-type', (req, res) => {
+  const { page } = req.query;
+  const data = {
+    data: [
+      {
+        incomeTaxRuleName: `income tax rule name page-${page}`,
+        description: 'John Doe',
+        id: 1,
+      },
+      {
+        incomeTaxRuleName: `income tax rule name page-${page}`,
+        description: 'John Doe 2',
+        id: 2,
+      },
+      {
+        incomeTaxRuleName: `income tax rule name page-${page}`,
+        description: 'John Doe 3',
+        id: 3,
+      },
+      {
+        incomeTaxRuleName: `income tax rule name page-${page}`,
+        description: 'John Doe 4',
+        id: 4,
+      },
+      {
+        incomeTaxRuleName: `income tax rule name page-${page}`,
+        description: 'John Doe 5',
+        id: 5,
+      },
+      {
+        incomeTaxRuleName: `income tax rule name page-${page}`,
+        description: 'John Doe 6',
+        id: 6,
+      },
+      {
+        incomeTaxRuleName: `income tax rule name page-${page}`,
+        description: 'John Doe 7',
+        id: 7,
+      },
+      {
+        incomeTaxRuleName: `income tax rule name page-${page}`,
+        description: 'John Doe 8',
+        id: 8,
+      },
+      {
+        incomeTaxRuleName: `income tax rule name page-${page}`,
+        description: 'John Doe 9',
+        id: 9,
+      },
+      {
+        incomeTaxRuleName: `income tax rule name page-${page}`,
+        description: 'John Doe 10',
+        id: 10,
+      },
+    ],
+    page: parseInt(page),
+    limit: 10,
+    total: 56,
+  };
+  return response.NewHttpOK(res, data, '', 'SUCCESS');
+});
+
 module.exports = router;
