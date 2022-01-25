@@ -679,7 +679,7 @@ router.post('/pay-group', (req, res) => {
   );
 });
 
-router.get('/payroll-run/:id', (req, res => {
+router.get('/payroll-run/:id', (req, res) => {
   const {id} = req.params;
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
@@ -717,7 +717,7 @@ router.get('/payroll-run/:id', (req, res => {
       "id": id,
    }, "", "SUCCESS");
   }
-}))
+})
 
 router.get('/employment-type', (req, res) => {
   const { page } = req.query;
