@@ -679,6 +679,7 @@ router.post('/pay-group', (req, res) => {
   );
 });
 
+<<<<<<< HEAD
 router.get('/payroll-run/:id', (req, res => {
   const {id} = req.params;
   var today = new Date();
@@ -719,4 +720,149 @@ router.get('/payroll-run/:id', (req, res => {
   }
 }))
 
+=======
+router.get('/employment-type', (req, res) => {
+  const { page } = req.query;
+  const data = {
+    data: [
+      {
+        incomeTaxRuleName: `income tax rule name page-${page}`,
+        description: 'John Doe',
+        id: 1,
+      },
+      {
+        incomeTaxRuleName: `income tax rule name page-${page}`,
+        description: 'John Doe 2',
+        id: 2,
+      },
+      {
+        incomeTaxRuleName: `income tax rule name page-${page}`,
+        description: 'John Doe 3',
+        id: 3,
+      },
+      {
+        incomeTaxRuleName: `income tax rule name page-${page}`,
+        description: 'John Doe 4',
+        id: 4,
+      },
+      {
+        incomeTaxRuleName: `income tax rule name page-${page}`,
+        description: 'John Doe 5',
+        id: 5,
+      },
+      {
+        incomeTaxRuleName: `income tax rule name page-${page}`,
+        description: 'John Doe 6',
+        id: 6,
+      },
+      {
+        incomeTaxRuleName: `income tax rule name page-${page}`,
+        description: 'John Doe 7',
+        id: 7,
+      },
+      {
+        incomeTaxRuleName: `income tax rule name page-${page}`,
+        description: 'John Doe 8',
+        id: 8,
+      },
+      {
+        incomeTaxRuleName: `income tax rule name page-${page}`,
+        description: 'John Doe 9',
+        id: 9,
+      },
+      {
+        incomeTaxRuleName: `income tax rule name page-${page}`,
+        description: 'John Doe 10',
+        id: 10,
+      },
+    ],
+    page: parseInt(page),
+    limit: 10,
+    total: 56,
+  };
+  return response.NewHttpOK(res, data, '', 'SUCCESS');
+});
+
+router.get('/tax-rule', (req, res) => {
+  const { page } = req.query;
+  const data = {
+    data: [
+      {
+        id: 1,
+        effectiveDateFrom: '2022-01-01',
+        effectiveDateUntil: '2022-01-01',
+        status: 'Active',
+        description: `description 1 -${page}`
+      },
+      {
+        id: 2,
+        effectiveDateFrom: '2022-01-01',
+        effectiveDateUntil: '2022-01-01',
+        status: 'Active',
+        description: `description 2 -${page}`
+      },
+      {
+        id: 3,
+        effectiveDateFrom: '2022-01-01',
+        effectiveDateUntil: '2022-01-01',
+        status: 'Active',
+        description: `description 3 -${page}`
+      },
+      {
+        id: 4,
+        effectiveDateFrom: '2022-01-01',
+        effectiveDateUntil: '2022-01-01',
+        status: 'Active',
+        description: `description 4 -${page}`
+      },
+      {
+        id: 5,
+        effectiveDateFrom: '2022-01-01',
+        effectiveDateUntil: '2022-01-01',
+        status: 'Active',
+        description: `description 5 -${page}`
+      },
+      {
+        id: 6,
+        effectiveDateFrom: '2022-01-01',
+        effectiveDateUntil: '2022-01-01',
+        status: 'Active',
+        description: `description 6 -${page}`
+      },
+      {
+        id: 7,
+        effectiveDateFrom: '2022-01-01',
+        effectiveDateUntil: '2022-01-01',
+        status: 'Active',
+        description: `description 7 -${page}`
+      },
+      {
+        id: 8,
+        effectiveDateFrom: '2022-01-01',
+        effectiveDateUntil: '2022-01-01',
+        status: 'Active',
+        description: `description 8 -${page}`
+      },
+      {
+        id: 9,
+        effectiveDateFrom: '2022-01-01',
+        effectiveDateUntil: '2022-01-01',
+        status: 'Active',
+        description: `description 9 -${page}`
+      },
+      {
+        id: 10,
+        effectiveDateFrom: '2022-01-01',
+        effectiveDateUntil: '2022-01-01',
+        status: 'Active',
+        description: `description 10 -${page}`
+      },
+    ],
+    page: parseInt(page),
+    limit: 10,
+    total: 56,
+  };
+  return response.NewHttpOK(res, data, '', 'SUCCESS');
+});
+>>>>>>> 395c63c915f778f9fc23b5732565804e323ce365
 module.exports = router;
