@@ -436,6 +436,123 @@ router.get("/payroll-run/tax-rule", (req, res) => {
   return response.NewHttpOK(res, data, "", "SUCCESS");
 });
 
+router.get("/payroll-run/payroll-run", (req, res) => {
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = today.getFullYear();
+  today = mm + ' ' + dd + ' ' + yyyy;
+  const { page } = req.query;
+  const data = {
+    data:[
+    {
+      periodName: 'November 2021',
+      payCycleName: 'Monthly',
+      cutoffDateFrom: today,
+      cutoffDateTo: today,
+      paymentDate: today,
+      statusName: 'LOCKED',
+      runDate: today,
+      id: 1,
+    },
+    {
+      periodName: 'November 2021',
+      payCycleName: 'Monthly',
+      cutoffDateFrom: today,
+      cutoffDateTo: today,
+      paymentDate: today,
+      statusName: 'DRAFT',
+      runDate: today,
+      id: 2,
+    },
+    {
+      periodName: 'November 2021',
+      payCycleName: 'Monthly',
+      cutoffDateFrom: today,
+      cutoffDateTo: today,
+      paymentDate: today,
+      statusName: 'RUNNING',
+      runDate: today,
+      id: 3,
+    },
+    {
+      periodName: 'November 2021',
+      payCycleName: 'Monthly',
+      cutoffDateFrom: today,
+      cutoffDateTo: today,
+      paymentDate: today,
+      statusName: 'CLOSED',
+      runDate: today,
+      id: 4,
+    },
+    {
+      periodName: 'November 2021',
+      payCycleName: 'Monthly',
+      cutoffDateFrom: today,
+      cutoffDateTo: today,
+      paymentDate: today,
+      statusName: 'LOCKED',
+      runDate: today,
+      id: 5,
+    },
+    {
+      periodName: 'November 2021',
+      payCycleName: 'Monthly',
+      cutoffDateFrom: today,
+      cutoffDateTo: today,
+      paymentDate: today,
+      statusName: 'LOCKED',
+      runDate: today,
+      id: 6,
+    },
+    {
+      periodName: 'November 2021',
+      payCycleName: 'Monthly',
+      cutoffDateFrom: today,
+      cutoffDateTo: today,
+      paymentDate: today,
+      statusName: 'LOCKED',
+      runDate: today,
+      id: 7,
+    },
+    {
+      periodName: 'November 2021',
+      payCycleName: 'Monthly',
+      cutoffDateFrom: today,
+      cutoffDateTo: today,
+      paymentDate: today,
+      statusName: 'LOCKED',
+      runDate: today,
+      id: 8,
+    },
+    {
+      periodName: 'November 2021',
+      payCycleName: 'Monthly',
+      cutoffDateFrom: today,
+      cutoffDateTo: today,
+      paymentDate: today,
+      statusName: 'LOCKED',
+      runDate: today,
+      id: 9,
+    },
+    {
+      periodName: 'November 2021',
+      payCycleName: 'Monthly',
+      cutoffDateFrom: today,
+      cutoffDateTo: today,
+      paymentDate: today,
+      statusName: 'LOCKED',
+      runDate: today,
+      id: 10,
+    },
+  ],
+  page : parseInt(page),
+  limit : 10,
+  total : 32
+  };
+  return response.NewHttpOK(res, data, "", "SUCCESS");
+});
+
 router.get("/testing", (req, res) => {
   return response.NewHttpOK(res, "success", "", "SUCCESS");
 });
