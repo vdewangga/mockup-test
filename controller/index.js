@@ -679,7 +679,6 @@ router.post('/pay-group', (req, res) => {
   );
 });
 
-<<<<<<< HEAD
 router.get('/payroll-run/:id', (req, res => {
   const {id} = req.params;
   var today = new Date();
@@ -720,7 +719,6 @@ router.get('/payroll-run/:id', (req, res => {
   }
 }))
 
-=======
 router.get('/employment-type', (req, res) => {
   const { page } = req.query;
   const data = {
@@ -864,5 +862,4 @@ router.get('/tax-rule', (req, res) => {
   };
   return response.NewHttpOK(res, data, '', 'SUCCESS');
 });
->>>>>>> 395c63c915f778f9fc23b5732565804e323ce365
 module.exports = router;
