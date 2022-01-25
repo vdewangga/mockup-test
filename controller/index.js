@@ -555,7 +555,7 @@ router.get("/payroll-run/payroll-run", (req, res) => {
       paymentDate: today,
       statusName: 'LOCKED',
       runDate: today,
-      id: 1,
+      id: 'aa-bb-cc-dd',
     },
     {
       periodName: 'November 2021',
@@ -565,7 +565,7 @@ router.get("/payroll-run/payroll-run", (req, res) => {
       paymentDate: today,
       statusName: 'DRAFT',
       runDate: today,
-      id: 2,
+      id: 'aa-bb-cc-ee',
     },
     {
       periodName: 'November 2021',
@@ -575,7 +575,7 @@ router.get("/payroll-run/payroll-run", (req, res) => {
       paymentDate: today,
       statusName: 'RUNNING',
       runDate: today,
-      id: 3,
+      id: 'aa-bb-cc-zz',
     },
     {
       periodName: 'November 2021',
@@ -585,7 +585,7 @@ router.get("/payroll-run/payroll-run", (req, res) => {
       paymentDate: today,
       statusName: 'CLOSED',
       runDate: today,
-      id: 4,
+      id: 'aa-bb-cc-aa',
     },
     {
       periodName: 'November 2021',
@@ -595,7 +595,7 @@ router.get("/payroll-run/payroll-run", (req, res) => {
       paymentDate: today,
       statusName: 'LOCKED',
       runDate: today,
-      id: 5,
+      id: 'aa-bb-cc-bb',
     },
     {
       periodName: 'November 2021',
@@ -605,7 +605,7 @@ router.get("/payroll-run/payroll-run", (req, res) => {
       paymentDate: today,
       statusName: 'LOCKED',
       runDate: today,
-      id: 6,
+      id: 'aa-bb-cc-cc',
     },
     {
       periodName: 'November 2021',
@@ -615,7 +615,7 @@ router.get("/payroll-run/payroll-run", (req, res) => {
       paymentDate: today,
       statusName: 'LOCKED',
       runDate: today,
-      id: 7,
+      id: 'aa-bb-cc-vv',
     },
     {
       periodName: 'November 2021',
@@ -625,7 +625,7 @@ router.get("/payroll-run/payroll-run", (req, res) => {
       paymentDate: today,
       statusName: 'LOCKED',
       runDate: today,
-      id: 8,
+      id: 'aa-bb-cc-xx',
     },
     {
       periodName: 'November 2021',
@@ -635,7 +635,7 @@ router.get("/payroll-run/payroll-run", (req, res) => {
       paymentDate: today,
       statusName: 'LOCKED',
       runDate: today,
-      id: 9,
+      id: 'aa-bb-cc-yy',
     },
     {
       periodName: 'November 2021',
@@ -645,7 +645,7 @@ router.get("/payroll-run/payroll-run", (req, res) => {
       paymentDate: today,
       statusName: 'LOCKED',
       runDate: today,
-      id: 10,
+      id: 'aa-bb-cc-rr',
     },
   ],
   page : parseInt(page),
@@ -678,5 +678,45 @@ router.post('/pay-group', (req, res) => {
     'SUCCESS'
   );
 });
+
+router.get('/payroll-run/:id', (req, res => {
+  const {id} = req.params;
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = today.getFullYear();
+  today = mm + ' ' + dd + ' ' + yyyy;
+  if(id === 'aa-bb-cc-dd') {
+    return response.NewHttpOK(res, {
+      "periodName": 'November 2021',
+      "payCycleName": 'Monthly',
+      "cutoffDateFrom": today,
+      "cutoffDateTo": today,
+      "paymentDate": today,
+      "statusName": 'LOCKED',
+      "id": id,
+   }, "", "SUCCESS");
+  } else if (id == 'aa-bb-cc-ee') {
+    return response.NewHttpOK(res, {
+      "periodName": 'November 2021',
+      "payCycleName": 'Monthly',
+      "cutoffDateFrom": today,
+      "cutoffDateTo": today,
+      "paymentDate": today,
+      "statusName": 'CLOSED',
+      "id": id,
+   }, "", "SUCCESS");
+  } else {
+    return response.NewHttpOK(res, {
+      "periodName": 'November 2021',
+      "payCycleName": 'Monthly',
+      "cutoffDateFrom": today,
+      "cutoffDateTo": today,
+      "paymentDate": today,
+      "statusName": 'DRAFT',
+      "id": id,
+   }, "", "SUCCESS");
+  }
+}))
 
 module.exports = router;
