@@ -895,21 +895,21 @@ router.get('/tax-rule/:id', (req, res) => {
         taxRate: 5,
       },
       {
-        id: 'aa-bb-cc',
+        id: 'aa-bb-dd',
         minimumValue: 50000001,
         maximumValue: 200000000,
         nonNpwpAdditionalFine: 20,
         taxRate: 15,
       },
       {
-        id: 'aa-bb-cc',
+        id: 'aa-bb-ee',
         minimumValue: 200000001,
         maximumValue: 500000000,
         nonNpwpAdditionalFine: 20,
         taxRate: 20,
       },
       {
-        id: 'aa-bb-cc',
+        id: 'aa-bb-ff',
         minimumValue: 500000001,
         maximumValue: 0,
         nonNpwpAdditionalFine: 20,
@@ -926,7 +926,7 @@ router.get('/tax-rule/:id', (req, res) => {
         valueOrCeiling: 54000000,
       },
       {
-        id: 'aa-bb-cc',
+        id: 'aa-bb-dd',
         type: 'Occupational Exemption',
         code: 'K',
         ruleType: '',
@@ -934,7 +934,7 @@ router.get('/tax-rule/:id', (req, res) => {
         valueOrCeiling: 1000000,
       },
       {
-        id: 'aa-bb-cc',
+        id: 'aa-bb-ee',
         type: 'Pension Exemption',
         code: 'K/I',
         ruleType: '',
@@ -942,7 +942,7 @@ router.get('/tax-rule/:id', (req, res) => {
         valueOrCeiling: 1000000,
       },
       {
-        id: 'aa-bb-cc',
+        id: 'aa-bb-ff',
         type: 'Marries Exemption Base',
         code: '1',
         ruleType: 'Exact',
