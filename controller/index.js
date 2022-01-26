@@ -867,8 +867,8 @@ router.get('/tax-rule', (req, res) => {
 router.get('/tax-rule/:id', (req, res) => {
   const data = {
     "id": 'aa-bb-cc',
-    "effectiveDateFrom": moment().format('DD MM YYYY'),
-    "effectiveDateUntil": moment().format('DD MM YYYY'),
+    "effectiveDateFrom": moment().format('DD MMMM YYYY'),
+    "effectiveDateUntil": moment().format('DD MMMM YYYY'),
     "status": true,
     "positionAllowancePerMonth": 600000,
     "positionAllowancePerYear": 7200000,
