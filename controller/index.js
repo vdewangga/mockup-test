@@ -539,7 +539,7 @@ router.post('/payroll-run', (req, res) => {
   );
 });
 
-router.get('/payroll-run', (req, res) => {
+router.get('/payroll/payroll-run', (req, res) => {
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
   var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -738,7 +738,7 @@ router.post('/pay-group', (req, res) => {
   return response.NewHttpOK(res, 'success', '', 'SUCCESS');
 });
 
-router.get('/payroll-run/:id', (req, res) => {
+router.get('/payroll/payroll-run:id', (req, res) => {
   const { id } = req.params;
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
@@ -1048,7 +1048,7 @@ router.get('/employees/:id', (req, res) => {
   );
 });
 
-router.get('/payroll-run/:id/employees', (req, res) => {
+router.get('/payroll/payroll-run/:id/employees', (req, res) => {
   const { page } = req.query;
   const { id } = req.params;
   const data = {
