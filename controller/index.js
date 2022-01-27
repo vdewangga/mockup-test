@@ -706,7 +706,7 @@ router.get('/payroll-run/:id', (req, res) => {
       "statusName": 'CLOSED',
       "id": id,
    }, "", "SUCCESS");
-  } else {
+  } else if(id === 'aa-bb-cc-rr') {
     return response.NewHttpOK(res, {
       "periodName": 'November 2021',
       "payCycleName": 'Monthly',
@@ -716,6 +716,13 @@ router.get('/payroll-run/:id', (req, res) => {
       "statusName": 'DRAFT',
       "id": id,
    }, "", "SUCCESS");
+  } else {
+    const data = {
+      message: 'INTERNAL SERVER ERROR',
+      errorCode: 'INTERNAL SERVER ERROR',
+      parameter: null,
+    };
+    return response.NewHttpOK(res, data, "", "SUCCESS");
   }
 })
 
