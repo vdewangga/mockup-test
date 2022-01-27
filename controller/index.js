@@ -749,13 +749,12 @@ router.get('/payroll/payroll-run/:id', (req, res) => {
     return response.NewHttpOK(
       res,
       {
-        periodName: 'November 2021',
-        payCycleName: 'Monthly',
-        cutoffDateFrom: today,
-        cutoffDateTo: today,
-        paymentDate: today,
-        statusName: 'LOCKED',
-        id: id,
+        "periodName": "PG-000000001-M1M012021",
+        "payCycleName": "Monthly",
+        "cutOffDateFrom": "2021-01-01",
+        "cutOffDateTo": "2021-01-31",
+        "paymentDate": "2021-01-31",
+        "statusName": "DRAFT"
       },
       '',
       'SUCCESS'
