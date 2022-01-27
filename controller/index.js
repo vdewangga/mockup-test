@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const response = require('../util/response');
+const moment = require('moment');
 
 //Test Endpoint
 router.post('/UserAuth/login', (req, res) => {
@@ -538,7 +539,7 @@ router.post('/payroll-run', (req, res) => {
   );
 });
 
-router.get("/payroll-run/payroll-run", (req, res) => {
+router.get('/payroll-run/payroll-run', (req, res) => {
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
   var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -546,117 +547,117 @@ router.get("/payroll-run/payroll-run", (req, res) => {
   today = mm + ' ' + dd + ' ' + yyyy;
   const { page } = req.query;
   const data = {
-    data:[
-    {
-      periodName: 'November 2021',
-      payCycleName: 'Monthly',
-      cutoffDateFrom: today,
-      cutoffDateTo: today,
-      paymentDate: today,
-      statusName: 'LOCKED',
-      runDate: today,
-      id: 'aa-bb-cc-dd',
-    },
-    {
-      periodName: 'November 2021',
-      payCycleName: 'Monthly',
-      cutoffDateFrom: today,
-      cutoffDateTo: today,
-      paymentDate: today,
-      statusName: 'DRAFT',
-      runDate: today,
-      id: 'aa-bb-cc-ee',
-    },
-    {
-      periodName: 'November 2021',
-      payCycleName: 'Monthly',
-      cutoffDateFrom: today,
-      cutoffDateTo: today,
-      paymentDate: today,
-      statusName: 'RUNNING',
-      runDate: today,
-      id: 'aa-bb-cc-zz',
-    },
-    {
-      periodName: 'November 2021',
-      payCycleName: 'Monthly',
-      cutoffDateFrom: today,
-      cutoffDateTo: today,
-      paymentDate: today,
-      statusName: 'CLOSED',
-      runDate: today,
-      id: 'aa-bb-cc-aa',
-    },
-    {
-      periodName: 'November 2021',
-      payCycleName: 'Monthly',
-      cutoffDateFrom: today,
-      cutoffDateTo: today,
-      paymentDate: today,
-      statusName: 'LOCKED',
-      runDate: today,
-      id: 'aa-bb-cc-bb',
-    },
-    {
-      periodName: 'November 2021',
-      payCycleName: 'Monthly',
-      cutoffDateFrom: today,
-      cutoffDateTo: today,
-      paymentDate: today,
-      statusName: 'LOCKED',
-      runDate: today,
-      id: 'aa-bb-cc-cc',
-    },
-    {
-      periodName: 'November 2021',
-      payCycleName: 'Monthly',
-      cutoffDateFrom: today,
-      cutoffDateTo: today,
-      paymentDate: today,
-      statusName: 'LOCKED',
-      runDate: today,
-      id: 'aa-bb-cc-vv',
-    },
-    {
-      periodName: 'November 2021',
-      payCycleName: 'Monthly',
-      cutoffDateFrom: today,
-      cutoffDateTo: today,
-      paymentDate: today,
-      statusName: 'LOCKED',
-      runDate: today,
-      id: 'aa-bb-cc-xx',
-    },
-    {
-      periodName: 'November 2021',
-      payCycleName: 'Monthly',
-      cutoffDateFrom: today,
-      cutoffDateTo: today,
-      paymentDate: today,
-      statusName: 'LOCKED',
-      runDate: today,
-      id: 'aa-bb-cc-yy',
-    },
-    {
-      periodName: 'November 2021',
-      payCycleName: 'Monthly',
-      cutoffDateFrom: today,
-      cutoffDateTo: today,
-      paymentDate: today,
-      statusName: 'LOCKED',
-      runDate: today,
-      id: 'aa-bb-cc-rr',
-    },
-  ],
-  page : parseInt(page),
-  limit : 10,
-  total : 32
+    data: [
+      {
+        periodName: 'November 2021',
+        payCycleName: 'Monthly',
+        cutoffDateFrom: today,
+        cutoffDateTo: today,
+        paymentDate: today,
+        statusName: 'LOCKED',
+        runDate: today,
+        id: 'aa-bb-cc-dd',
+      },
+      {
+        periodName: 'November 2021',
+        payCycleName: 'Monthly',
+        cutoffDateFrom: today,
+        cutoffDateTo: today,
+        paymentDate: today,
+        statusName: 'DRAFT',
+        runDate: today,
+        id: 'aa-bb-cc-ee',
+      },
+      {
+        periodName: 'November 2021',
+        payCycleName: 'Monthly',
+        cutoffDateFrom: today,
+        cutoffDateTo: today,
+        paymentDate: today,
+        statusName: 'RUNNING',
+        runDate: today,
+        id: 'aa-bb-cc-zz',
+      },
+      {
+        periodName: 'November 2021',
+        payCycleName: 'Monthly',
+        cutoffDateFrom: today,
+        cutoffDateTo: today,
+        paymentDate: today,
+        statusName: 'CLOSED',
+        runDate: today,
+        id: 'aa-bb-cc-aa',
+      },
+      {
+        periodName: 'November 2021',
+        payCycleName: 'Monthly',
+        cutoffDateFrom: today,
+        cutoffDateTo: today,
+        paymentDate: today,
+        statusName: 'LOCKED',
+        runDate: today,
+        id: 'aa-bb-cc-bb',
+      },
+      {
+        periodName: 'November 2021',
+        payCycleName: 'Monthly',
+        cutoffDateFrom: today,
+        cutoffDateTo: today,
+        paymentDate: today,
+        statusName: 'LOCKED',
+        runDate: today,
+        id: 'aa-bb-cc-cc',
+      },
+      {
+        periodName: 'November 2021',
+        payCycleName: 'Monthly',
+        cutoffDateFrom: today,
+        cutoffDateTo: today,
+        paymentDate: today,
+        statusName: 'LOCKED',
+        runDate: today,
+        id: 'aa-bb-cc-vv',
+      },
+      {
+        periodName: 'November 2021',
+        payCycleName: 'Monthly',
+        cutoffDateFrom: today,
+        cutoffDateTo: today,
+        paymentDate: today,
+        statusName: 'LOCKED',
+        runDate: today,
+        id: 'aa-bb-cc-xx',
+      },
+      {
+        periodName: 'November 2021',
+        payCycleName: 'Monthly',
+        cutoffDateFrom: today,
+        cutoffDateTo: today,
+        paymentDate: today,
+        statusName: 'LOCKED',
+        runDate: today,
+        id: 'aa-bb-cc-yy',
+      },
+      {
+        periodName: 'November 2021',
+        payCycleName: 'Monthly',
+        cutoffDateFrom: today,
+        cutoffDateTo: today,
+        paymentDate: today,
+        statusName: 'LOCKED',
+        runDate: today,
+        id: 'aa-bb-cc-rr',
+      },
+    ],
+    page: parseInt(page),
+    limit: 10,
+    total: 32,
   };
-  return response.NewHttpOK(res, data, "", "SUCCESS");
+  return response.NewHttpOK(res, data, '', 'SUCCESS');
 });
 
-router.get("/testing", (req, res) => {
-  return response.NewHttpOK(res, "success", "", "SUCCESS");
+router.get('/testing', (req, res) => {
+  return response.NewHttpOK(res, 'success', '', 'SUCCESS');
 });
 
 router.post('/pay-group', (req, res) => {
@@ -671,31 +672,31 @@ router.post('/pay-group', (req, res) => {
     };
     return response.NewHttpRecordNotFound(res, data, '', 'Error');
   }
-  return response.NewHttpOK(
-    res,
-    'success',
-    '',
-    'SUCCESS'
-  );
+  return response.NewHttpOK(res, 'success', '', 'SUCCESS');
 });
 
 router.get('/payroll-run/:id', (req, res) => {
-  const {id} = req.params;
+  const { id } = req.params;
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
   var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
   var yyyy = today.getFullYear();
   today = mm + ' ' + dd + ' ' + yyyy;
-  if(id === 'aa-bb-cc-dd') {
-    return response.NewHttpOK(res, {
-      "periodName": 'November 2021',
-      "payCycleName": 'Monthly',
-      "cutoffDateFrom": today,
-      "cutoffDateTo": today,
-      "paymentDate": today,
-      "statusName": 'LOCKED',
-      "id": id,
-   }, "", "SUCCESS");
+  if (id === 'aa-bb-cc-dd') {
+    return response.NewHttpOK(
+      res,
+      {
+        periodName: 'November 2021',
+        payCycleName: 'Monthly',
+        cutoffDateFrom: today,
+        cutoffDateTo: today,
+        paymentDate: today,
+        statusName: 'LOCKED',
+        id: id,
+      },
+      '',
+      'SUCCESS'
+    );
   } else if (id == 'aa-bb-cc-ee') {
     return response.NewHttpOK(res, {
       "periodName": 'November 2021',
@@ -724,7 +725,7 @@ router.get('/payroll-run/:id', (req, res) => {
     };
     return response.NewHttpOK(res, data, "", "SUCCESS");
   }
-})
+});
 
 router.get('/employment-type', (req, res) => {
   const { page } = req.query;
@@ -797,70 +798,70 @@ router.get('/tax-rule', (req, res) => {
         effectiveDateFrom: '2022-01-01',
         effectiveDateUntil: '2022-01-01',
         status: 'Active',
-        description: `description 1 -${page}`
+        description: `description 1 -${page}`,
       },
       {
         id: 2,
         effectiveDateFrom: '2022-01-01',
         effectiveDateUntil: '2022-01-01',
         status: 'Active',
-        description: `description 2 -${page}`
+        description: `description 2 -${page}`,
       },
       {
         id: 3,
         effectiveDateFrom: '2022-01-01',
         effectiveDateUntil: '2022-01-01',
         status: 'Active',
-        description: `description 3 -${page}`
+        description: `description 3 -${page}`,
       },
       {
         id: 4,
         effectiveDateFrom: '2022-01-01',
         effectiveDateUntil: '2022-01-01',
         status: 'Active',
-        description: `description 4 -${page}`
+        description: `description 4 -${page}`,
       },
       {
         id: 5,
         effectiveDateFrom: '2022-01-01',
         effectiveDateUntil: '2022-01-01',
         status: 'Active',
-        description: `description 5 -${page}`
+        description: `description 5 -${page}`,
       },
       {
         id: 6,
         effectiveDateFrom: '2022-01-01',
         effectiveDateUntil: '2022-01-01',
         status: 'Active',
-        description: `description 6 -${page}`
+        description: `description 6 -${page}`,
       },
       {
         id: 7,
         effectiveDateFrom: '2022-01-01',
         effectiveDateUntil: '2022-01-01',
         status: 'Active',
-        description: `description 7 -${page}`
+        description: `description 7 -${page}`,
       },
       {
         id: 8,
         effectiveDateFrom: '2022-01-01',
         effectiveDateUntil: '2022-01-01',
         status: 'Active',
-        description: `description 8 -${page}`
+        description: `description 8 -${page}`,
       },
       {
         id: 9,
         effectiveDateFrom: '2022-01-01',
         effectiveDateUntil: '2022-01-01',
         status: 'Active',
-        description: `description 9 -${page}`
+        description: `description 9 -${page}`,
       },
       {
         id: 10,
         effectiveDateFrom: '2022-01-01',
         effectiveDateUntil: '2022-01-01',
         status: 'Active',
-        description: `description 10 -${page}`
+        description: `description 10 -${page}`,
       },
     ],
     page: parseInt(page),
@@ -868,5 +869,106 @@ router.get('/tax-rule', (req, res) => {
     total: 56,
   };
   return response.NewHttpOK(res, data, '', 'SUCCESS');
+});
+
+router.get('/tax-rule/:id', (req, res) => {
+  const data = {
+    id: 'aa-bb-cc',
+    effectiveDateFrom: moment().format('DD MMMM YYYY'),
+    effectiveDateUntil: moment().format('DD MMMM YYYY'),
+    status: true,
+    positionAllowancePerMonth: 600000,
+    positionAllowancePerYear: 7200000,
+    nationalityId: 1,
+    description:
+      'Income tax for Indonesian pegawai tetap, according to RUU HPR',
+    remarks: 'remarsk for tax rule',
+    incomeTaxTable: [
+      {
+        id: 'aa-bb-cc',
+        minimumValue: 0,
+        maximumValue: 50000000,
+        nonNpwpAdditionalFine: 20,
+        taxRate: 5,
+      },
+      {
+        id: 'aa-bb-dd',
+        minimumValue: 50000001,
+        maximumValue: 200000000,
+        nonNpwpAdditionalFine: 20,
+        taxRate: 15,
+      },
+      {
+        id: 'aa-bb-ee',
+        minimumValue: 200000001,
+        maximumValue: 500000000,
+        nonNpwpAdditionalFine: 20,
+        taxRate: 20,
+      },
+      {
+        id: 'aa-bb-ff',
+        minimumValue: 500000001,
+        maximumValue: 0,
+        nonNpwpAdditionalFine: 20,
+        taxRate: 25,
+      },
+    ],
+    ptkpTable: [
+      {
+        id: 'aa-bb-cc',
+        type: 'Not Married Exeption Base',
+        code: 'TK',
+        ruleType: 'Exact',
+        rulePercentage: null,
+        valueOrCeiling: 54000000,
+      },
+      {
+        id: 'aa-bb-dd',
+        type: 'Occupational Exemption',
+        code: 'K',
+        ruleType: '',
+        rulePercentage: 5,
+        valueOrCeiling: 1000000,
+      },
+      {
+        id: 'aa-bb-ee',
+        type: 'Pension Exemption',
+        code: 'K/I',
+        ruleType: '',
+        rulePercentage: 5,
+        valueOrCeiling: 1000000,
+      },
+      {
+        id: 'aa-bb-ff',
+        type: 'Marries Exemption Base',
+        code: '1',
+        ruleType: 'Exact',
+        rulePercentage: null,
+        valueOrCeiling: 58000000,
+      },
+    ],
+  };
+  return response.NewHttpOK(res, data, '', 'SUCCESS');
+});
+
+router.get('/employees/:id', (req, res) => {
+  const { id } = req.params;
+  return response.NewHttpOK(
+    res,
+    {
+      id: id,
+      employeeNo: '88',
+      name: 'aku laku',
+      citizenship: { id: 1, name: 'indonesian' },
+      identityNo: '123213',
+      passportNo: '23233323',
+      employmentDate: '2022-01-02',
+      employmentType: { id: 1, name: 'Pegawai Tetap' },
+      basicSalary: 50000,
+      npwpNo: '12312323',
+    },
+    '',
+    'SUCCESS'
+  );
 });
 module.exports = router;
