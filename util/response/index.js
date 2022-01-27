@@ -3,19 +3,19 @@ const statusCode  = {
 	StatusCreated              : 201, // RFC 7231, 6.3.2
 	StatusAccepted             : 202, // RFC 7231, 6.3.3
 
-	StatusBadRequest                   : 400, // RFC 7231, 6.5.1
-	StatusUnauthorized                 : 401, // RFC 7235, 3.1
-	StatusForbidden                    : 403, // RFC 7231, 6.5.3
-	StatusNotFound                     : 404, // RFC 7231, 6.5.4
-	StatusMethodNotAllowed             : 405, // RFC 7231, 6.5.5
-	StatusConflict                     : 409, // RFC 7231, 6.5.8
-	StatusGone                         : 410, // RFC 7231, 6.5.9
-	StatusLengthRequired               : 411, // RFC 7231, 6.5.10
+	StatusBadRequest           : 400, // RFC 7231, 6.5.1
+	StatusUnauthorized         : 401, // RFC 7235, 3.1
+	StatusForbidden            : 403, // RFC 7231, 6.5.3
+	StatusNotFound             : 404, // RFC 7231, 6.5.4
+	StatusMethodNotAllowed     : 405, // RFC 7231, 6.5.5
+	StatusConflict             : 409, // RFC 7231, 6.5.8
+	StatusGone                 : 410, // RFC 7231, 6.5.9
+	StatusLengthRequired       : 411, // RFC 7231, 6.5.10
 
-	StatusInternalServerError           : 500, // RFC 7231, 6.6.1
-	StatusNotImplemented                : 501, // RFC 7231, 6.6.2
-	StatusBadGateway                    : 502, // RFC 7231, 6.6.3
-	StatusServiceUnavailable            : 503, // RFC 7231, 6.6.4
+	StatusInternalServerError  : 500, // RFC 7231, 6.6.1
+	StatusNotImplemented       : 501, // RFC 7231, 6.6.2
+	StatusBadGateway           : 502, // RFC 7231, 6.6.3
+	StatusServiceUnavailable   : 503, // RFC 7231, 6.6.4
 }
 
 exports.NewHttpOK = (res,body = [],message,flag = "") => {
