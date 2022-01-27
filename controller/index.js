@@ -738,7 +738,7 @@ router.post('/pay-group', (req, res) => {
   return response.NewHttpOK(res, 'success', '', 'SUCCESS');
 });
 
-router.get('/payroll/payroll-run:id', (req, res) => {
+router.get('/payroll/payroll-run/:id', (req, res) => {
   const { id } = req.params;
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
