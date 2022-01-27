@@ -657,7 +657,7 @@ router.get('/payroll-run', (req, res) => {
 });
 
 
-router.get('rounding-rule', (req, res) => {
+router.get('/rounding-rule', (req, res) => {
   const { page } = req.query;
   const data = {
     data: [
