@@ -527,12 +527,12 @@ router.get('/dropdown/pay-period', (req, res) => {
   return response.NewHttpOK(res, data, '', 'SUCCESS');
 });
 
-router.post('/payroll-run', (req, res) => {
+router.post('/payroll/payroll-run', (req, res) => {
   const { payPeriodId } = req.body;
   return response.NewHttpOK(
     res,
     {
-      payPeriodId: payPeriodId,
+      payPeriodId: payPeriodId || 'aa-bb-cc',
     },
     '',
     'SUCCESS'
