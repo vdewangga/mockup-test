@@ -539,7 +539,7 @@ router.post('/payroll/payroll-run', (req, res) => {
   );
 });
 
-router.post('/payroll-run/:id/proceed-to-lock', (req, res) => {
+router.post('/payroll/payroll-run/:id/proceed-to-lock', (req, res) => {
   const { id } = req.params;
   return response.NewHttpOK(
     res,
@@ -549,7 +549,7 @@ router.post('/payroll-run/:id/proceed-to-lock', (req, res) => {
   );
 });
 
-router.post('/payroll-run/:id/close-payroll', (req, res) => {
+router.post('/payroll/payroll-run/:id/close-payroll', (req, res) => {
   const { id } = req.params;
   return response.NewHttpOK(
     res,
