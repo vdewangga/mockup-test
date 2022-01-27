@@ -706,8 +706,8 @@ router.get('/payroll-run/:id', (req, res) => {
       "paymentDate": today,
       "statusName": 'CLOSED',
       "id": id,
-   }, "", "SUCCESS");
-  } else if(id === 'aa-bb-cc-rr') {
+    }, "", "SUCCESS");
+  } else if (id === 'aa-bb-cc-rr') {
     return response.NewHttpOK(res, {
       "periodName": 'November 2021',
       "payCycleName": 'Monthly',
@@ -716,7 +716,7 @@ router.get('/payroll-run/:id', (req, res) => {
       "paymentDate": today,
       "statusName": 'DRAFT',
       "id": id,
-   }, "", "SUCCESS");
+    }, "", "SUCCESS");
   } else {
     const data = {
       message: 'INTERNAL SERVER ERROR',
@@ -971,4 +971,98 @@ router.get('/employees/:id', (req, res) => {
     'SUCCESS'
   );
 });
+
+router.get('/payroll-run/:id/employees', (req, res) => {
+  const { page } = req.query;
+  const { id } = req.params;
+  const data = {
+    data: [
+      {
+        id: 'aa-bb-aa',
+        employeeName: 'Surya Paloh',
+        employeeNo: '1',
+        salaryBeforeTax: 100000,
+        tax: 1000,
+        takeHomeSalary: 90000
+      },
+      {
+        id: 'aa-bb-bb',
+        employeeName: 'Surya Paloh',
+        employeeNo: '1',
+        salaryBeforeTax: 100000,
+        tax: 1000,
+        takeHomeSalary: 90000
+      },
+      {
+        id: 'aa-bb-cc',
+        employeeName: 'Surya Paloh',
+        employeeNo: '1',
+        salaryBeforeTax: 100000,
+        tax: 1000,
+        takeHomeSalary: 90000
+      },
+      {
+        id: 'aa-bb-dd',
+        employeeName: 'Surya Paloh',
+        employeeNo: '1',
+        salaryBeforeTax: 100000,
+        tax: 1000,
+        takeHomeSalary: 90000
+      },
+      {
+        id: 'aa-bb-ee',
+        employeeName: 'Surya Paloh',
+        employeeNo: '1',
+        salaryBeforeTax: 100000,
+        tax: 1000,
+        takeHomeSalary: 90000
+      },
+      {
+        id: 'aa-bb-ff',
+        employeeName: 'Surya Paloh',
+        employeeNo: '1',
+        salaryBeforeTax: 100000,
+        tax: 1000,
+        takeHomeSalary: 90000
+      },
+      {
+        id: 'aa-bb-gg',
+        employeeName: 'Surya Paloh',
+        employeeNo: '1',
+        salaryBeforeTax: 100000,
+        tax: 1000,
+        takeHomeSalary: 90000
+      },
+      {
+        id: 'aa-bb-hh',
+        employeeName: 'Surya Paloh',
+        employeeNo: '1',
+        salaryBeforeTax: 100000,
+        tax: 1000,
+        takeHomeSalary: 90000
+      },
+      {
+        id: 'aa-bb-ii',
+        employeeName: 'Surya Paloh',
+        employeeNo: '1',
+        salaryBeforeTax: 100000,
+        tax: 1000,
+        takeHomeSalary: 90000
+      },
+      {
+        id: 'aa-bb-jj',
+        employeeName: 'Surya Paloh',
+        employeeNo: '1',
+        salaryBeforeTax: 100000,
+        tax: 1000,
+        takeHomeSalary: 90000
+      },
+    ],
+    total: 34,
+    limit: 10,
+    page: parseInt(page)
+  }
+  return response.NewHttpOK(res, data, '', 'SUCCESS');
+})
+
 module.exports = router;
