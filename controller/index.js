@@ -539,6 +539,26 @@ router.post('/payroll/payroll-run', (req, res) => {
   );
 });
 
+router.post('/payroll-run/:id/proceed-to-lock', (req, res) => {
+  const { id } = req.params;
+  return response.NewHttpOK(
+    res,
+    {id},
+    '',
+    'SUCCESS'
+  );
+});
+
+router.post('/payroll-run/:id/close-payroll', (req, res) => {
+  const { id } = req.params;
+  return response.NewHttpOK(
+    res,
+    {id},
+    '',
+    'SUCCESS'
+  );
+});
+
 router.get('/payroll/payroll-run', (req, res) => {
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
