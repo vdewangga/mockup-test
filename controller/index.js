@@ -1141,4 +1141,104 @@ router.get('/payroll-run/:id/employees', (req, res) => {
   return response.NewHttpOK(res, data, '', 'SUCCESS');
 })
 
+router.get('/pay-group/:id', (req, res) => {
+  const { id } = req.params;
+  const data = {
+    id: 'aa-bb-cc',
+    unitId: 1,
+    paygroupCode: 'PAY-202200000001',
+    cycleTypeCode: 'MAIN_CYCLE',
+    payCycleCode: 'MONTHLY',
+    calculationMethodCode: 'NETT',
+    isActiveStatus: true,
+    description: 'Pay Group for 2022',
+    payPeriod: {
+      startMonth: 1,
+      startYear: '2021',
+      endMonth: 12,
+      endYear: '2021',
+    },
+    periodList: [
+      {
+        id: 'aa-bb-aa',
+        date: moment().format('MMMM YYYY'),
+        periodDesc: 'PAY-202200000000101',
+        cutOffDateFrom: moment().format('DD/MM/YYYY'),
+        cutOffDateTo: moment().format('DD/MM/YYYY'),
+        payDate: moment().format('DD/MM/YYYY'),
+      },
+      {
+        id: 'aa-bb-bb',
+        date: moment().format('MMMM YYYY'),
+        periodDesc: 'PAY-202200000000101',
+        cutOffDateFrom: moment().format('DD/MM/YYYY'),
+        cutOffDateTo: moment().format('DD/MM/YYYY'),
+        payDate: moment().format('DD/MM/YYYY'),
+      },
+      {
+        id: 'aa-bb-cc',
+        date: moment().format('MMMM YYYY'),
+        periodDesc: 'PAY-202200000000101',
+        cutOffDateFrom: moment().format('DD/MM/YYYY'),
+        cutOffDateTo: moment().format('DD/MM/YYYY'),
+        payDate: moment().format('DD/MM/YYYY'),
+      },
+      {
+        id: 'aa-bb-dd',
+        date: moment().format('MMMM YYYY'),
+        periodDesc: 'PAY-202200000000101',
+        cutOffDateFrom: moment().format('DD/MM/YYYY'),
+        cutOffDateTo: moment().format('DD/MM/YYYY'),
+        payDate: moment().format('DD/MM/YYYY'),
+      },
+      {
+        id: 'aa-bb-ee',
+        date: moment().format('MMMM YYYY'),
+        periodDesc: 'PAY-202200000000101',
+        cutOffDateFrom: moment().format('DD/MM/YYYY'),
+        cutOffDateTo: moment().format('DD/MM/YYYY'),
+        payDate: moment().format('DD/MM/YYYY'),
+      }, {
+        id: 'aa-bb-ff',
+        date: moment().format('MMMM YYYY'),
+        periodDesc: 'PAY-202200000000101',
+        cutOffDateFrom: moment().format('DD/MM/YYYY'),
+        cutOffDateTo: moment().format('DD/MM/YYYY'),
+        payDate: moment().format('DD/MM/YYYY'),
+      }
+      , {
+        id: 'aa-bb-aa',
+        date: moment().format('MMMM YYYY'),
+        periodDesc: 'PAY-202200000000101',
+        cutOffDateFrom: moment().format('DD/MM/YYYY'),
+        cutOffDateTo: moment().format('DD/MM/YYYY'),
+        payDate: moment().format('DD/MM/YYYY'),
+      }
+      , {
+        id: 'aa-bb-gg',
+        date: moment().format('MMMM YYYY'),
+        periodDesc: 'PAY-202200000000101',
+        cutOffDateFrom: moment().format('DD/MM/YYYY'),
+        cutOffDateTo: moment().format('DD/MM/YYYY'),
+        payDate: moment().format('DD/MM/YYYY'),
+      }, {
+        id: 'aa-bb-hh',
+        date: moment().format('MMMM YYYY'),
+        periodDesc: 'PAY-202200000000101',
+        cutOffDateFrom: moment().format('DD/MM/YYYY'),
+        cutOffDateTo: moment().format('DD/MM/YYYY'),
+        payDate: moment().format('DD/MM/YYYY'),
+      }, {
+        id: 'aa-bb-ii',
+        date: moment().format('MMMM YYYY'),
+        periodDesc: 'PAY-202200000000101',
+        cutOffDateFrom: moment().format('DD/MM/YYYY'),
+        cutOffDateTo: moment().format('DD/MM/YYYY'),
+        payDate: moment().format('DD/MM/YYYY'),
+      }
+    ]
+  }
+  return response.NewHttpOK(res, data, '', 'SUCCESS');
+})
+
 module.exports = router;
