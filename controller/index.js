@@ -789,6 +789,19 @@ router.get('/employment-type', (req, res) => {
   return response.NewHttpOK(res, data, '', 'SUCCESS');
 });
 
+router.get('/employment-type/:id', (req, res) => {
+  const { id } = req.params;
+  const data = {
+    unitName: 'Unit-1',
+    code: '00-111',
+    incomeTaxRuleId: 1,
+    description: 'test description',
+    maximumBaseSalary: 100000,
+    id
+  };
+  return response.NewHttpOK(res, data, '', 'SUCCESS');
+});
+
 router.get('/tax-rule', (req, res) => {
   const { page } = req.query;
   const data = {
