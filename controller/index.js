@@ -539,7 +539,7 @@ router.post('/payroll-run', (req, res) => {
   );
 });
 
-router.get('/payroll-run/payroll-run', (req, res) => {
+router.get('/payroll-run', (req, res) => {
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
   var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -646,6 +646,69 @@ router.get('/payroll-run/payroll-run', (req, res) => {
         paymentDate: today,
         statusName: 'LOCKED',
         runDate: today,
+        id: 'aa-bb-cc-rr',
+      },
+    ],
+    page: parseInt(page),
+    limit: 10,
+    total: 32,
+  };
+  return response.NewHttpOK(res, data, '', 'SUCCESS');
+});
+
+
+router.get('rounding-rule', (req, res) => {
+  const { page } = req.query;
+  const data = {
+    data: [
+      {
+        description: 'description for rounding rule',
+        isActiveStatus: false,
+        id: 'aa-bb-cc-dd',
+      },
+      {
+        description: 'description for rounding rule',
+        isActiveStatus: false,
+        id: 'aa-bb-cc-ee',
+      },
+      {
+        description: 'description for rounding rule',
+        isActiveStatus: false,
+        id: 'aa-bb-cc-zz',
+      },
+      {
+        description: 'description for rounding rule',
+        isActiveStatus: false,
+        id: 'aa-bb-cc-aa',
+      },
+      {
+        description: 'description for rounding rule',
+        isActiveStatus: false,
+        id: 'aa-bb-cc-bb',
+      },
+      {
+        description: 'description for rounding rule',
+        isActiveStatus: false,
+        id: 'aa-bb-cc-cc',
+      },
+      {
+        description: 'description for rounding rule',
+        isActiveStatus: false,
+        id: 'aa-bb-cc-vv',
+      },
+      {
+        description: 'description for rounding rule',
+        isActiveStatus: false,
+        id: 'aa-bb-cc-xx',
+      },
+      {
+        description: 'description for rounding rule',
+        isActiveStatus: false,
+        id: 'aa-bb-cc-yy',
+      },
+      {
+        description: 'description for rounding rule',
+        isActiveStatus: false,
         id: 'aa-bb-cc-rr',
       },
     ],
