@@ -441,7 +441,7 @@ router.get('/testing', (req, res) => {
   return response.NewHttpOK(res, 'success', '', 'SUCCESS');
 });
 
-router.get('/dropdown/pay-period', (req, res) => {
+router.get('/payroll/dropdown/pay-period', (req, res) => {
   const { page, description } = req.query;
   let data = {};
   if (page === '1') {
