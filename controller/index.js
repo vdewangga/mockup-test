@@ -1095,7 +1095,7 @@ router.get('/payroll/pay-group/:id', (req, res) => {
     "payCycleCode":"MONTHLY",
     "cycleTypeCode":"MAIN_CYCLE",
     "calculationMethodCode":"GROSS",
-    "isActiveStatus":false,
+    "isActiveStatus":true,
     "description":"Pay Group for 2022",
     "payPeriod":{
        "startMonth":1,
