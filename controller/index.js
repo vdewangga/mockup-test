@@ -893,7 +893,7 @@ router.get('/payroll/tax-rule', (req, res) => {
   return response.NewHttpOK(res, data, '', 'SUCCESS');
 });
 
-router.get('/tax-rule/:id', (req, res) => {
+router.get('/payroll/tax-rule/:id', (req, res) => {
   const data = {
     id: 'aa-bb-cc',
     effectiveDateFrom: moment().format('DD MMMM YYYY'),
