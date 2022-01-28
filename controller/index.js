@@ -598,7 +598,7 @@ router.get('/payroll/payroll-run', (req, res) => {
     ],
     page: parseInt(page),
     limit: 10,
-    total: 32,
+    total: 2,
   };
   return response.NewHttpOK(res, data, '', 'SUCCESS');
 });
@@ -670,7 +670,7 @@ router.get('/testing', (req, res) => {
   return response.NewHttpOK(res, 'success', '', 'SUCCESS');
 });
 
-router.post('/pay-group', (req, res) => {
+router.post('/payroll/pay-group', (req, res) => {
   const { paygroupCode } = req.body;
   if (paygroupCode == 'inikodebakal') {
     const data = {
@@ -1087,7 +1087,7 @@ router.get('/payroll/payroll-run/:id/employees', (req, res) => {
   return response.NewHttpOK(res, data, '', 'SUCCESS');
 })
 
-router.get('/pay-group/:id', (req, res) => {
+router.get('/payroll/pay-group/:id', (req, res) => {
   const { id } = req.params;
   const data = {
     id: 'aa-bb-cc',
