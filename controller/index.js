@@ -1090,100 +1090,46 @@ router.get('/payroll/payroll-run/:id/employees', (req, res) => {
 router.get('/payroll/pay-group/:id', (req, res) => {
   const { id } = req.params;
   const data = {
-    id: 'aa-bb-cc',
-    unitId: 1,
-    paygroupCode: 'PAY-202200000001',
-    cycleTypeCode: 'MAIN_CYCLE',
-    payCycleCode: 'MONTHLY',
-    calculationMethodCode: 'NETT',
-    isActiveStatus: true,
-    description: 'Pay Group for 2022',
-    payPeriod: {
-      startMonth: 1,
-      startYear: '2021',
-      endMonth: 12,
-      endYear: '2021',
+    "id":"d5bd81d3-c45e-4c89-88e9-a4414ccc9afa",
+    "paygroupCode":"PAY-202200000001",
+    "payCycleCode":"MONTHLY",
+    "cycleTypeCode":"MAIN_CYCLE",
+    "calculationMethodCode":"GROSS",
+    "isActiveStatus":false,
+    "description":"Pay Group for 2022",
+    "payPeriod":{
+       "startMonth":1,
+       "startYear":2022,
+       "endMonth":12,
+       "endYear":2022
     },
-    periodList: [
-      {
-        id: 'aa-bb-aa',
-        date: moment().format('MMMM YYYY'),
-        periodDesc: 'PAY-202200000000101',
-        cutOffDateFrom: moment().format('DD/MM/YYYY'),
-        cutOffDateTo: moment().format('DD/MM/YYYY'),
-        payDate: moment().format('DD/MM/YYYY'),
-      },
-      {
-        id: 'aa-bb-bb',
-        date: moment().format('MMMM YYYY'),
-        periodDesc: 'PAY-202200000000101',
-        cutOffDateFrom: moment().format('DD/MM/YYYY'),
-        cutOffDateTo: moment().format('DD/MM/YYYY'),
-        payDate: moment().format('DD/MM/YYYY'),
-      },
-      {
-        id: 'aa-bb-cc',
-        date: moment().format('MMMM YYYY'),
-        periodDesc: 'PAY-202200000000101',
-        cutOffDateFrom: moment().format('DD/MM/YYYY'),
-        cutOffDateTo: moment().format('DD/MM/YYYY'),
-        payDate: moment().format('DD/MM/YYYY'),
-      },
-      {
-        id: 'aa-bb-dd',
-        date: moment().format('MMMM YYYY'),
-        periodDesc: 'PAY-202200000000101',
-        cutOffDateFrom: moment().format('DD/MM/YYYY'),
-        cutOffDateTo: moment().format('DD/MM/YYYY'),
-        payDate: moment().format('DD/MM/YYYY'),
-      },
-      {
-        id: 'aa-bb-ee',
-        date: moment().format('MMMM YYYY'),
-        periodDesc: 'PAY-202200000000101',
-        cutOffDateFrom: moment().format('DD/MM/YYYY'),
-        cutOffDateTo: moment().format('DD/MM/YYYY'),
-        payDate: moment().format('DD/MM/YYYY'),
-      }, {
-        id: 'aa-bb-ff',
-        date: moment().format('MMMM YYYY'),
-        periodDesc: 'PAY-202200000000101',
-        cutOffDateFrom: moment().format('DD/MM/YYYY'),
-        cutOffDateTo: moment().format('DD/MM/YYYY'),
-        payDate: moment().format('DD/MM/YYYY'),
-      }
-      , {
-        id: 'aa-bb-aa',
-        date: moment().format('MMMM YYYY'),
-        periodDesc: 'PAY-202200000000101',
-        cutOffDateFrom: moment().format('DD/MM/YYYY'),
-        cutOffDateTo: moment().format('DD/MM/YYYY'),
-        payDate: moment().format('DD/MM/YYYY'),
-      }
-      , {
-        id: 'aa-bb-gg',
-        date: moment().format('MMMM YYYY'),
-        periodDesc: 'PAY-202200000000101',
-        cutOffDateFrom: moment().format('DD/MM/YYYY'),
-        cutOffDateTo: moment().format('DD/MM/YYYY'),
-        payDate: moment().format('DD/MM/YYYY'),
-      }, {
-        id: 'aa-bb-hh',
-        date: moment().format('MMMM YYYY'),
-        periodDesc: 'PAY-202200000000101',
-        cutOffDateFrom: moment().format('DD/MM/YYYY'),
-        cutOffDateTo: moment().format('DD/MM/YYYY'),
-        payDate: moment().format('DD/MM/YYYY'),
-      }, {
-        id: 'aa-bb-ii',
-        date: moment().format('MMMM YYYY'),
-        periodDesc: 'PAY-202200000000101',
-        cutOffDateFrom: moment().format('DD/MM/YYYY'),
-        cutOffDateTo: moment().format('DD/MM/YYYY'),
-        payDate: moment().format('DD/MM/YYYY'),
-      }
+    "periodList":[
+       {
+          "id":"cc9f216d-775e-4672-8e1c-0ed84e6f3229",
+          "date":"2022-03-01",
+          "periodDesc":"PAY-202200000000103",
+          "cutOffDateFrom":"2022-03-01",
+          "cutOffDateTo":"2022-03-31",
+          "payDate":"2022-03-31"
+       },
+       {
+          "id":"66bc1c69-2622-4a03-9196-744ecafc4a10",
+          "date":"2022-01-01",
+          "periodDesc":"PAY-202200000000101",
+          "cutOffDateFrom":"2022-01-01",
+          "cutOffDateTo":"2022-01-31",
+          "payDate":"2022-01-31"
+       },
+       {
+          "id":"3ae4689c-34df-4e96-a45e-fe9613876a1e",
+          "date":"2022-02-01",
+          "periodDesc":"PAY-202200000000102",
+          "cutOffDateFrom":"2022-02-01",
+          "cutOffDateTo":"2022-02-28",
+          "payDate":"2022-02-28"
+       }
     ]
-  }
+ }
   return response.NewHttpOK(res, data, '', 'SUCCESS');
 })
 
