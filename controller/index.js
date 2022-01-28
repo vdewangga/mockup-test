@@ -811,7 +811,7 @@ router.get('/employment-type/:id', (req, res) => {
   return response.NewHttpOK(res, data, '', 'SUCCESS');
 });
 
-router.get('/tax-rule', (req, res) => {
+router.get('/payroll/tax-rule', (req, res) => {
   const { page } = req.query;
   const data = {
     data: [
