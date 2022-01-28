@@ -532,7 +532,7 @@ router.post('/payroll/payroll-run', (req, res) => {
   return response.NewHttpOK(
     res,
     {
-      payPeriodId: payPeriodId || 'aa-bb-cc',
+      payrollRunId: 'aa-bb-cc',
     },
     '',
     'SUCCESS'
@@ -543,7 +543,7 @@ router.post('/payroll/payroll-run/:id/proceed-to-lock', (req, res) => {
   const { id } = req.params;
   return response.NewHttpOK(
     res,
-    {id},
+    { id },
     '',
     'SUCCESS'
   );
@@ -553,7 +553,7 @@ router.post('/payroll/payroll-run/:id/close-payroll', (req, res) => {
   const { id } = req.params;
   return response.NewHttpOK(
     res,
-    {id},
+    { id },
     '',
     'SUCCESS'
   );
@@ -567,107 +567,34 @@ router.get('/payroll/payroll-run', (req, res) => {
   today = mm + ' ' + dd + ' ' + yyyy;
   const { page } = req.query;
   const data = {
-    data: [
+    "data": [
       {
-        periodName: 'November 2021',
-        payCycleName: 'Monthly',
-        cutoffDateFrom: today,
-        cutoffDateTo: today,
-        paymentDate: today,
-        statusName: 'LOCKED',
-        runDate: today,
-        id: 'aa-bb-cc-dd',
+        "id": "0dbba3af-a8df-466e-13d3-08d9e17d2ab7",
+        "period": "PG-000000001-M1M032021",
+        "payCycleName": "Monthly",
+        "cutOffDateFrom": "2021-03-01",
+        "cutOffDateTo": "2021-03-31",
+        "runDate": "2022-01-27",
+        "statusName": "DRAFT"
       },
       {
-        periodName: 'November 2021',
-        payCycleName: 'Monthly',
-        cutoffDateFrom: today,
-        cutoffDateTo: today,
-        paymentDate: today,
-        statusName: 'DRAFT',
-        runDate: today,
-        id: 'aa-bb-cc-ee',
+        "id": "2eeaafa9-6c52-4a0e-13d2-08d9e17d2ab7",
+        "period": "PG-000000001-M1M022021",
+        "payCycleName": "Monthly",
+        "cutOffDateFrom": "2021-02-01",
+        "cutOffDateTo": "2021-02-28",
+        "runDate": "2022-01-27",
+        "statusName": "DRAFT"
       },
       {
-        periodName: 'November 2021',
-        payCycleName: 'Monthly',
-        cutoffDateFrom: today,
-        cutoffDateTo: today,
-        paymentDate: today,
-        statusName: 'RUNNING',
-        runDate: today,
-        id: 'aa-bb-cc-zz',
-      },
-      {
-        periodName: 'November 2021',
-        payCycleName: 'Monthly',
-        cutoffDateFrom: today,
-        cutoffDateTo: today,
-        paymentDate: today,
-        statusName: 'CLOSED',
-        runDate: today,
-        id: 'aa-bb-cc-aa',
-      },
-      {
-        periodName: 'November 2021',
-        payCycleName: 'Monthly',
-        cutoffDateFrom: today,
-        cutoffDateTo: today,
-        paymentDate: today,
-        statusName: 'LOCKED',
-        runDate: today,
-        id: 'aa-bb-cc-bb',
-      },
-      {
-        periodName: 'November 2021',
-        payCycleName: 'Monthly',
-        cutoffDateFrom: today,
-        cutoffDateTo: today,
-        paymentDate: today,
-        statusName: 'LOCKED',
-        runDate: today,
-        id: 'aa-bb-cc-cc',
-      },
-      {
-        periodName: 'November 2021',
-        payCycleName: 'Monthly',
-        cutoffDateFrom: today,
-        cutoffDateTo: today,
-        paymentDate: today,
-        statusName: 'LOCKED',
-        runDate: today,
-        id: 'aa-bb-cc-vv',
-      },
-      {
-        periodName: 'November 2021',
-        payCycleName: 'Monthly',
-        cutoffDateFrom: today,
-        cutoffDateTo: today,
-        paymentDate: today,
-        statusName: 'LOCKED',
-        runDate: today,
-        id: 'aa-bb-cc-xx',
-      },
-      {
-        periodName: 'November 2021',
-        payCycleName: 'Monthly',
-        cutoffDateFrom: today,
-        cutoffDateTo: today,
-        paymentDate: today,
-        statusName: 'LOCKED',
-        runDate: today,
-        id: 'aa-bb-cc-yy',
-      },
-      {
-        periodName: 'November 2021',
-        payCycleName: 'Monthly',
-        cutoffDateFrom: today,
-        cutoffDateTo: today,
-        paymentDate: today,
-        statusName: 'LOCKED',
-        runDate: today,
-        id: 'aa-bb-cc-rr',
-      },
+        "id": "a5bfde19-ba3a-4a0a-13d1-08d9e17d2ab7",
+        "period": "PG-000000001-M1M012021",
+        "payCycleName": "Monthly",
+        "cutOffDateFrom": "2021-01-01",
+        "cutOffDateTo": "2021-01-31",
+        "runDate": "2022-01-27",
+        "statusName": "DRAFT"
+      }
     ],
     page: parseInt(page),
     limit: 10,
