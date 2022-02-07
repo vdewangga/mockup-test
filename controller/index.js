@@ -541,22 +541,12 @@ router.post('/payroll/payroll-run', (req, res) => {
 
 router.post('/payroll/payroll-run/:id/proceed-to-lock', (req, res) => {
   const { id } = req.params;
-  return response.NewHttpOK(
-    res,
-    { id },
-    '',
-    'SUCCESS'
-  );
+  return response.NewHttpOK(res, { id }, '', 'SUCCESS');
 });
 
 router.post('/payroll/payroll-run/:id/close-payroll', (req, res) => {
   const { id } = req.params;
-  return response.NewHttpOK(
-    res,
-    { id },
-    '',
-    'SUCCESS'
-  );
+  return response.NewHttpOK(res, { id }, '', 'SUCCESS');
 });
 
 router.get('/payroll/payroll-run', (req, res) => {
@@ -567,34 +557,34 @@ router.get('/payroll/payroll-run', (req, res) => {
   today = mm + ' ' + dd + ' ' + yyyy;
   const { page } = req.query;
   const data = {
-    "data": [
+    data: [
       {
-        "id": "0dbba3af-a8df-466e-13d3-08d9e17d2ab7",
-        "period": "PG-000000001-M1M032021",
-        "payCycleName": "Monthly",
-        "cutOffDateFrom": "2021-03-01",
-        "cutOffDateTo": "2021-03-31",
-        "runDate": "2022-01-27",
-        "statusName": "DRAFT"
+        id: '0dbba3af-a8df-466e-13d3-08d9e17d2ab7',
+        period: 'PG-000000001-M1M032021',
+        payCycleName: 'Monthly',
+        cutOffDateFrom: '2021-03-01',
+        cutOffDateTo: '2021-03-31',
+        runDate: '2022-01-27',
+        statusName: 'DRAFT',
       },
       {
-        "id": "2eeaafa9-6c52-4a0e-13d2-08d9e17d2ab7",
-        "period": "PG-000000001-M1M022021",
-        "payCycleName": "Monthly",
-        "cutOffDateFrom": "2021-02-01",
-        "cutOffDateTo": "2021-02-28",
-        "runDate": "2022-01-27",
-        "statusName": "DRAFT"
+        id: '2eeaafa9-6c52-4a0e-13d2-08d9e17d2ab7',
+        period: 'PG-000000001-M1M022021',
+        payCycleName: 'Monthly',
+        cutOffDateFrom: '2021-02-01',
+        cutOffDateTo: '2021-02-28',
+        runDate: '2022-01-27',
+        statusName: 'DRAFT',
       },
       {
-        "id": "a5bfde19-ba3a-4a0a-13d1-08d9e17d2ab7",
-        "period": "PG-000000001-M1M012021",
-        "payCycleName": "Monthly",
-        "cutOffDateFrom": "2021-01-01",
-        "cutOffDateTo": "2021-01-31",
-        "runDate": "2022-01-27",
-        "statusName": "DRAFT"
-      }
+        id: 'a5bfde19-ba3a-4a0a-13d1-08d9e17d2ab7',
+        period: 'PG-000000001-M1M012021',
+        payCycleName: 'Monthly',
+        cutOffDateFrom: '2021-01-01',
+        cutOffDateTo: '2021-01-31',
+        runDate: '2022-01-27',
+        statusName: 'DRAFT',
+      },
     ],
     page: parseInt(page),
     limit: 10,
@@ -695,7 +685,7 @@ router.get('/payroll/rounding-rule/:id', (req, res) => {
         valueTo: 999,
         roundingTo: 1000,
       },
-    ]
+    ],
   };
   return response.NewHttpOK(res, data, '', 'SUCCESS');
 });
@@ -730,43 +720,53 @@ router.get('/payroll/payroll-run/:id', (req, res) => {
     return response.NewHttpOK(
       res,
       {
-        "periodName": "PG-000000001-M1M012021",
-        "payCycleName": "Monthly",
-        "cutOffDateFrom": "2021-01-01",
-        "cutOffDateTo": "2021-01-31",
-        "paymentDate": "2021-01-31",
-        "statusName": "DRAFT"
+        periodName: 'PG-000000001-M1M012021',
+        payCycleName: 'Monthly',
+        cutOffDateFrom: '2021-01-01',
+        cutOffDateTo: '2021-01-31',
+        paymentDate: '2021-01-31',
+        statusName: 'DRAFT',
       },
       '',
       'SUCCESS'
     );
   } else if (id == 'aa-bb-cc-ee') {
-    return response.NewHttpOK(res, {
-      "periodName": 'November 2021',
-      "payCycleName": 'Monthly',
-      "cutoffDateFrom": today,
-      "cutoffDateTo": today,
-      "paymentDate": today,
-      "statusName": 'CLOSED',
-      "id": id,
-    }, "", "SUCCESS");
+    return response.NewHttpOK(
+      res,
+      {
+        periodName: 'November 2021',
+        payCycleName: 'Monthly',
+        cutoffDateFrom: today,
+        cutoffDateTo: today,
+        paymentDate: today,
+        statusName: 'CLOSED',
+        id: id,
+      },
+      '',
+      'SUCCESS'
+    );
   } else if (id === 'aa-bb-cc-rr') {
     const data = {
       message: 'INTERNAL SERVER ERROR',
       errorCode: 'INTERNAL SERVER ERROR',
       parameter: null,
     };
-    return response.NewHttpOK(res, data, "", "SUCCESS");
+    return response.NewHttpOK(res, data, '', 'SUCCESS');
   } else {
-    return response.NewHttpOK(res, {
-      "periodName": 'November 2021',
-      "payCycleName": 'Monthly',
-      "cutoffDateFrom": today,
-      "cutoffDateTo": today,
-      "paymentDate": today,
-      "statusName": 'DRAFT',
-      "id": id,
-    }, "", "SUCCESS");
+    return response.NewHttpOK(
+      res,
+      {
+        periodName: 'November 2021',
+        payCycleName: 'Monthly',
+        cutoffDateFrom: today,
+        cutoffDateTo: today,
+        paymentDate: today,
+        statusName: 'DRAFT',
+        id: id,
+      },
+      '',
+      'SUCCESS'
+    );
   }
 });
 
@@ -832,6 +832,27 @@ router.get('/employment-type', (req, res) => {
   return response.NewHttpOK(res, data, '', 'SUCCESS');
 });
 
+router.get('/payroll/pay-group', (req, res) => {
+  const { page } = req.query;
+  const data = [];
+  for (let index = 0; index < 10; index++) {
+    data.push({
+      id: index + 1,
+      paygroupCode: 'code paygroup loh ini',
+      payCycleName: 'monthly',
+      isActiveStatus: true,
+      description: 'ini description',
+    });
+  }
+  const data = {
+    data: data,
+    page: parseInt(page),
+    limit: 10,
+    total: 19,
+  };
+  return response.NewHttpOK(res, data, '', 'SUCCESS');
+});
+
 router.get('/employment-type/:id', (req, res) => {
   const { id } = req.params;
   const data = {
@@ -840,7 +861,7 @@ router.get('/employment-type/:id', (req, res) => {
     incomeTaxRuleId: 1,
     description: 'test description',
     maximumBaseSalary: 100000,
-    id
+    id,
   };
   return response.NewHttpOK(res, data, '', 'SUCCESS');
 });
@@ -1039,7 +1060,7 @@ router.get('/payroll/payroll-run/:id/employees', (req, res) => {
         employeeNo: '1',
         salaryBeforeTax: 100000,
         tax: 1000,
-        takeHomeSalary: 90000
+        takeHomeSalary: 90000,
       },
       {
         id: 'aa-bb-bb',
@@ -1047,7 +1068,7 @@ router.get('/payroll/payroll-run/:id/employees', (req, res) => {
         employeeNo: '1',
         salaryBeforeTax: 100000,
         tax: 1000,
-        takeHomeSalary: 90000
+        takeHomeSalary: 90000,
       },
       {
         id: 'aa-bb-cc',
@@ -1055,7 +1076,7 @@ router.get('/payroll/payroll-run/:id/employees', (req, res) => {
         employeeNo: '1',
         salaryBeforeTax: 100000,
         tax: 1000,
-        takeHomeSalary: 90000
+        takeHomeSalary: 90000,
       },
       {
         id: 'aa-bb-dd',
@@ -1063,7 +1084,7 @@ router.get('/payroll/payroll-run/:id/employees', (req, res) => {
         employeeNo: '1',
         salaryBeforeTax: 100000,
         tax: 1000,
-        takeHomeSalary: 90000
+        takeHomeSalary: 90000,
       },
       {
         id: 'aa-bb-ee',
@@ -1071,7 +1092,7 @@ router.get('/payroll/payroll-run/:id/employees', (req, res) => {
         employeeNo: '1',
         salaryBeforeTax: 100000,
         tax: 1000,
-        takeHomeSalary: 90000
+        takeHomeSalary: 90000,
       },
       {
         id: 'aa-bb-ff',
@@ -1079,7 +1100,7 @@ router.get('/payroll/payroll-run/:id/employees', (req, res) => {
         employeeNo: '1',
         salaryBeforeTax: 100000,
         tax: 1000,
-        takeHomeSalary: 90000
+        takeHomeSalary: 90000,
       },
       {
         id: 'aa-bb-gg',
@@ -1087,7 +1108,7 @@ router.get('/payroll/payroll-run/:id/employees', (req, res) => {
         employeeNo: '1',
         salaryBeforeTax: 100000,
         tax: 1000,
-        takeHomeSalary: 90000
+        takeHomeSalary: 90000,
       },
       {
         id: 'aa-bb-hh',
@@ -1095,7 +1116,7 @@ router.get('/payroll/payroll-run/:id/employees', (req, res) => {
         employeeNo: '1',
         salaryBeforeTax: 100000,
         tax: 1000,
-        takeHomeSalary: 90000
+        takeHomeSalary: 90000,
       },
       {
         id: 'aa-bb-ii',
@@ -1103,7 +1124,7 @@ router.get('/payroll/payroll-run/:id/employees', (req, res) => {
         employeeNo: '1',
         salaryBeforeTax: 100000,
         tax: 1000,
-        takeHomeSalary: 90000
+        takeHomeSalary: 90000,
       },
       {
         id: 'aa-bb-jj',
@@ -1111,60 +1132,60 @@ router.get('/payroll/payroll-run/:id/employees', (req, res) => {
         employeeNo: '1',
         salaryBeforeTax: 100000,
         tax: 1000,
-        takeHomeSalary: 90000
+        takeHomeSalary: 90000,
       },
     ],
     total: 34,
     limit: 10,
-    page: parseInt(page)
-  }
+    page: parseInt(page),
+  };
   return response.NewHttpOK(res, data, '', 'SUCCESS');
-})
+});
 
 router.get('/payroll/pay-group/:id', (req, res) => {
   const { id } = req.params;
   const data = {
-    "id": "d5bd81d3-c45e-4c89-88e9-a4414ccc9afa",
-    "paygroupCode": "PAY-202200000001",
-    "payCycleCode": "MONTHLY",
-    "cycleTypeCode": "MAIN_CYCLE",
-    "calculationMethodCode": "GROSS",
-    "isActiveStatus": true,
-    "description": "Pay Group for 2022",
-    "payPeriod": {
-      "startMonth": 1,
-      "startYear": 2022,
-      "endMonth": 12,
-      "endYear": 2022
+    id: 'd5bd81d3-c45e-4c89-88e9-a4414ccc9afa',
+    paygroupCode: 'PAY-202200000001',
+    payCycleCode: 'MONTHLY',
+    cycleTypeCode: 'MAIN_CYCLE',
+    calculationMethodCode: 'GROSS',
+    isActiveStatus: true,
+    description: 'Pay Group for 2022',
+    payPeriod: {
+      startMonth: 1,
+      startYear: 2022,
+      endMonth: 12,
+      endYear: 2022,
     },
-    "periodList": [
+    periodList: [
       {
-        "id": "cc9f216d-775e-4672-8e1c-0ed84e6f3229",
-        "date": "2022-03-01",
-        "periodDesc": "PAY-202200000000103",
-        "cutOffDateFrom": "2022-03-01",
-        "cutOffDateTo": "2022-03-31",
-        "payDate": "2022-03-31"
+        id: 'cc9f216d-775e-4672-8e1c-0ed84e6f3229',
+        date: '2022-03-01',
+        periodDesc: 'PAY-202200000000103',
+        cutOffDateFrom: '2022-03-01',
+        cutOffDateTo: '2022-03-31',
+        payDate: '2022-03-31',
       },
       {
-        "id": "66bc1c69-2622-4a03-9196-744ecafc4a10",
-        "date": "2022-01-01",
-        "periodDesc": "PAY-202200000000101",
-        "cutOffDateFrom": "2022-01-01",
-        "cutOffDateTo": "2022-01-31",
-        "payDate": "2022-01-31"
+        id: '66bc1c69-2622-4a03-9196-744ecafc4a10',
+        date: '2022-01-01',
+        periodDesc: 'PAY-202200000000101',
+        cutOffDateFrom: '2022-01-01',
+        cutOffDateTo: '2022-01-31',
+        payDate: '2022-01-31',
       },
       {
-        "id": "3ae4689c-34df-4e96-a45e-fe9613876a1e",
-        "date": "2022-02-01",
-        "periodDesc": "PAY-202200000000102",
-        "cutOffDateFrom": "2022-02-01",
-        "cutOffDateTo": "2022-02-28",
-        "payDate": "2022-02-28"
-      }
-    ]
-  }
+        id: '3ae4689c-34df-4e96-a45e-fe9613876a1e',
+        date: '2022-02-01',
+        periodDesc: 'PAY-202200000000102',
+        cutOffDateFrom: '2022-02-01',
+        cutOffDateTo: '2022-02-28',
+        payDate: '2022-02-28',
+      },
+    ],
+  };
   return response.NewHttpOK(res, data, '', 'SUCCESS');
-})
+});
 
 module.exports = router;
