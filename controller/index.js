@@ -844,13 +844,13 @@ router.get('/payroll/pay-group', (req, res) => {
       description: 'ini description',
     });
   }
-  const data = {
+  const response = {
     data: data,
     page: parseInt(page),
     limit: 10,
     total: 19,
   };
-  return response.NewHttpOK(res, data, '', 'SUCCESS');
+  return response.NewHttpOK(res, response, '', 'SUCCESS');
 });
 
 router.get('/employment-type/:id', (req, res) => {
