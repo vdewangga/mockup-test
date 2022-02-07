@@ -770,7 +770,7 @@ router.get('/payroll/payroll-run/:id', (req, res) => {
   }
 });
 
-router.get('/employment-type', (req, res) => {
+router.get('/employee/employment-type', (req, res) => {
   const { page } = req.query;
   const data = {
     data: [
